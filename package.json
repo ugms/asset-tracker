@@ -1,0 +1,48 @@
+{
+  "name": "asset-tracker",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "server.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "npm run clean && npm run build-react && npm run build-server",
+    "build-react": "webpack",
+    "build-server": "babel -d ./dist/server ./server -s",
+    "clean": "rm -rf dist && mkdir dist",
+    "dev": "webpack --mode development && node dist/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugms/asset-tracker.git"
+  },
+  "author": "UGMS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ugms/asset-tracker/issues"
+  },
+  "homepage": "https://github.com/ugms/asset-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
