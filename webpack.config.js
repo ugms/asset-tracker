@@ -88,12 +88,4 @@ module.exports = {
 			name: true
 		}
 	},
-
-	// devServer: {
-	// 	open: true
-	// },
-	
-	watchOptions: {
-	    ignored: /node_modules/
-	}
 };
