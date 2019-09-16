@@ -12,8 +12,8 @@ const HTML_FILE = path.join(REACT_DIR, 'index.html'); // NEW
 
 // placeholders
 const mockResponse = {
-  foo: 'bar',
-  bar: 'foo'
+  foo: 'moo',
+  bar: 'far'
 };
 app.use(express.static(REACT_DIR)); // NEW
 app.get('/api', (req, res) => {

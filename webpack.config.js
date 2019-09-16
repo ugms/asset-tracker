@@ -89,7 +89,11 @@ module.exports = {
 		}
 	},
 
-	devServer: {
-		open: true
+	// devServer: {
+	// 	open: true
+	// },
+	
+	watchOptions: {
+	    ignored: /node_modules/
 	}
 };
