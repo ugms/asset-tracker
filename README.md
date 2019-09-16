@@ -1,2 +1,3 @@
-# asset-tracker
-Inventory and Asset Management System
+# UGMS Asset Tracking System
+
+A work in progress.
