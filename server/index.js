@@ -9,16 +9,9 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 const REACT_DIR = path.join(__dirname, '../client'); // NEW
 const HTML_FILE = path.join(REACT_DIR, 'index.html'); // NEW
-
-// placeholders
-const mockResponse = {
-  foo: 'moo',
-  bar: 'far'
-};
 app.use(express.static(REACT_DIR)); // NEW
-app.get('/api', (req, res) => {
-  res.send(mockResponse);
-});
+
+// placeholder route
 app.get('/', (req, res) => {
  res.sendFile(HTML_FILE); // EDIT
 });
