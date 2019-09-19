@@ -32,7 +32,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 module.exports = {
 	mode: 'development',
-	entry: './client/index.js',
+	entry: './client/index.jsx',
 
 	output: {
 		filename: '[name].[chunkhash].js',
@@ -88,8 +88,4 @@ module.exports = {
 			name: true
 		}
 	},
-
-	devServer: {
-		open: true
-	}
 };
