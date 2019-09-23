@@ -1,8 +1,31 @@
 'use strict'
 
+// environment setup
+import dotenv from 'dotenv'
+const result = (process.env.NODE_ENV == 'development') ? dotenv.config() : false
+
 // dependencies
 import express from 'express'
 import path from 'path'
+
+// SQL / db
+import Sequelize from 'sequelize';
+const sequelize = new Sequelize(
+  process.env.DATABASE,
+  process.env.DATABASE_USER,
+  process.env.DATABASE_PASSWORD,
+  {
+    dialect: 'postgres',
+  },
+);
+const models = {
+  User: sequelize.import('./models/user'),
+};
+Object.keys(models).forEach(key => {
+  if ('associate' in models[key]) {
+    models[key].associate(models);
+  }
+});
 
 // set our express options
 const app = express();
@@ -19,7 +42,8 @@ app.get('/', (req, res) => {
 // face the world
 const hotPort = app.get('port');
 const server = app.listen(hotPort, () => {
-    console.log(`App listening on port ${hotPort}!`)
+    console.log(`Example app listening on port ${hotPort}!`)
+    sequelize.sync();
 });
 
 // for Mocha/Chai test purposes
