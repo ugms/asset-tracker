@@ -25,6 +25,7 @@
   "homepage": "https://github.com/ugms/asset-tracker#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "passport-local": "^1.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
