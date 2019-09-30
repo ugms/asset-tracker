@@ -3,13 +3,12 @@
 // dependencies
 import express from 'express'
 import path from 'path'
-// Old version:
-const passport = require('passport');
-const Strategy = require('passport-local').Strategy;
-const db = require('./db'); // placeholder
-// New version
-// import passport from 'passport'
-// import strategy from 'passport-local'
+
+// const passport = require('passport');
+import passport from 'passport'
+// const Strategy = require('passport-local').Strategy;
+import { strategy, LocalStrategy } from 'passport-local'
+// const db = require('./db'); // placeholder
 
 // set our express options
 const app = express();
@@ -17,6 +16,17 @@ app.set('port', process.env.PORT || 3000);
 const REACT_DIR = path.join(__dirname, '../client'); // NEW
 const HTML_FILE = path.join(REACT_DIR, 'index.html'); // NEW
 app.use(express.static(REACT_DIR)); // NEW
+
+// Passport.initalize middleware
+// app.configure(function() {
+//   app.use(express.static('public'));
+//   app.use(express.cookieParser());
+//   app.use(express.bodyParser());
+//   app.use(express.session({ secret: 'keyboard cat' }));
+//   app.use(passport.initialize());
+//   app.use(passport.session());
+//   app.use(app.router);
+// });
 
 // Local Authentication
 passport.use(new LocalStrategy(
