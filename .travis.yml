@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - node
+services:
+  - postgresql
+before_script:
+  - psql -c 'ugms-test' -U postgres
 install:
   - npm install
   - npm run build
