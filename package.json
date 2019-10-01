@@ -11,7 +11,8 @@
     "build-watch": "webpack --watch & babel --watch -d ./dist/server ./server -s",
     "clean": "rm -rf dist && mkdir dist",
     "dev": "npm run build-watch & nodemon --watch dist dist/server/index.js",
-    "test": "mocha --require @babel/polyfill --require @babel/register"
+    "test": "mocha --require @babel/polyfill --require @babel/register",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,21 @@
     "url": "https://github.com/ugms/asset-tracker/issues"
   },
   "homepage": "https://github.com/ugms/asset-tracker#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,css,json,md,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
@@ -43,11 +59,21 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.15.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.1",
     "mocha": "^6.2.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.2",
+    "prettier": "1.18.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
