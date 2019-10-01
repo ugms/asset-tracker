@@ -11,8 +11,7 @@
     "build-watch": "webpack --watch & babel --watch -d ./dist/server ./server -s",
     "clean": "rm -rf dist && mkdir dist",
     "dev": "npm run build-watch & nodemon --watch dist dist/server/index.js",
-    "test": "mocha --require @babel/polyfill --require @babel/register",
-    "precommit": "lint-staged"
+    "test": "mocha --require @babel/polyfill --require @babel/register"
   },
   "repository": {
     "type": "git",
