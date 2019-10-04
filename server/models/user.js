@@ -4,6 +4,9 @@ const user = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true,
     },
+    password: {
+      type: DataTypes.STRING,
+    },
   });
   return User;
 };
