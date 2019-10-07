@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./Login.css";
 import { Link } from "react-router-dom";
+
+import "./Login.css";
 
 const Input = props => (
   <input
@@ -12,7 +13,7 @@ const Input = props => (
 );
 
 const Button = props => (
-  <button className="c-button" onClick={props.onClick}>
+  <button className="c-button" onClick={props.onClick} type="button">
     {props.text}
   </button>
 );
@@ -26,14 +27,14 @@ class Login extends Component {
     };
   }
 
-  handleInput = (param, e) => {
-    const { value } = e.target;
+  // handleInput = (param, e) => {
+  //   const { value } = e.target;
 
-    console.log(param);
+  //   console.log(param);
 
-    if (param === "name") {
-    }
-  };
+  //   if (param === "name") {
+  //   }
+  // };
 
   render() {
     return (
@@ -44,6 +45,7 @@ class Login extends Component {
             src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
             className="logo"
             width="200px"
+            alt=""
           />
         </div>
         <section id="signup">

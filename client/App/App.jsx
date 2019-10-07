@@ -1,8 +1,10 @@
 import React from "react";
-import logo from "../static/logo.svg";
-import "./App.css";
-import Login from "../Login/Login.jsx";
 import { BrowserRouter, Route } from "react-router-dom";
+
+// import logo from "../static/logo.svg";
+import Login from "../Login/Login.jsx";
+
+import "./App.css";
 
 function App() {
   return (
