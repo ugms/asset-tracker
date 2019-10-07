@@ -1,6 +1,12 @@
 // environment setup
 import dotenv from "dotenv";
 
+// Import models
+import User from "./models/user";
+
+// Import controllers
+import * from "./controllers/users";
+
 // dependencies
 import express from "express";
 import path from "path";
@@ -32,8 +38,8 @@ Object.keys(models).forEach(key => {
 
 // const passport = require('passport');
 import passport from 'passport'
-// const Strategy = require('passport-local').Strategy;
-import { strategy, LocalStrategy } from 'passport-local'
+const Strategy = require('passport-local').Strategy;
+// import { strategy, LocalStrategy } from 'passport-local'
 // const db = require('./db'); // placeholder
 
 // set our express options
@@ -55,7 +61,7 @@ app.use(express.static(REACT_DIR));
 // });
 
 // Local Authentication
-passport.use(new LocalStrategy(
+passport.use(new Strategy(
   function(username, password, done) {
     User.findOne({ username: username }, function (err, user) {
       if (err) { return done(err); }
@@ -72,12 +78,29 @@ app.get("/", (req, res) => {
   res.sendFile(HTML_FILE);
 });
 
+
 // placeholder: login
 app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
 });
+
+// app.get('/squirell', (req, res) => {
+//   console.log("We are here")
+//   res.send("hello world")
+// })
+// app.post('/register',
+//   // passport.authenticate('local', { failureRedirect: '/login' }),
+//
+//   function(req, res) {
+//     User.create(req.body).then(user => {
+//       // you can now access the newly created task via the variable task
+//       return user
+//     }).catch(err => ({
+//       // console.log("error: ", err)
+//     });
+// });
 
 
 // face the world
