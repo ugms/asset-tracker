@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import User from "./models/user";
 
 // Import controllers
-import * from "./controllers/users";
+import * as user-controller from "./controllers/users";
 
 // dependencies
 import express from "express";
