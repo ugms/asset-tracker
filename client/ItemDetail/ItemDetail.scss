@@ -1,0 +1,34 @@
+.item_detail_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item_detail__buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_detail__button {
+}
+
+button {
+  background-color: #707070;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  height: 45px;
+  width: 85px;
+  margin: 15px;
+}
+
+.item_detail_container {
+  height: 70vh;
+  width: 70vw;
+  background-color: #e5e5e5;
+}
