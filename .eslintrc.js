@@ -19,6 +19,11 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": "off",
+    "import/order": "warn",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "warn",
+    "react/no-unescaped-entities": "warn"
   }
 };
