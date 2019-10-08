@@ -7,6 +7,7 @@ body {
   width: 100%;
   height: 200px;
   background: #333333;
+<<<<<<< HEAD
   z-index: 1;
   position: absolute;
   bottom: 0px;
@@ -20,10 +21,24 @@ body {
   position: absolute;
 }
 
+=======
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+}
+.orangebg {
+  width: 100%;
+  height: 340px;
+  background: #f26522;
+  z-index: 1;
+  position: absolute;
+}
+>>>>>>> master
 .logo {
   padding-left: 0px;
 }
 
+<<<<<<< HEAD
 #login {
   padding-top: 285px;
   /* margin-right: 600px;
@@ -58,21 +73,47 @@ body {
 }
 
 #login .card .card-title {
+=======
+#signup {
+  padding-top: 200px;
+  padding-right: 680px;
+  padding-left: 680px;
+  padding-bottom: 20px;
+  z-index: 3;
+  position: relative;
+}
+#signup .card {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  z-index: 3;
+  position: relative;
+}
+#signup .card .card-title {
+>>>>>>> master
   padding: 2rem 1.2rem 0;
   margin-bottom: 0;
   text-align: center;
   z-index: 3;
   position: relative;
 }
+<<<<<<< HEAD
 
 #login .card .card-title h2 {
   position: relative;
   font-size: 1.2rem;
   letter-spacing: .5px;
+=======
+#signup .card .card-title h2 {
+  position: relative;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+>>>>>>> master
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+<<<<<<< HEAD
 
 #login .card .card-title h2:after {
   position: absolute;
@@ -81,17 +122,29 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+=======
+#signup .card .card-title h2:after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+>>>>>>> master
   height: 2px;
   width: 50px;
   background: #21253d;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .img-holder {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
+<<<<<<< HEAD
 
 img.logo {
   display: block;
@@ -101,19 +154,36 @@ img.logo {
   height: 120px;
 }
 
+=======
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  height: 80px;
+}
+>>>>>>> master
 .form {
   background: #fff;
   border-radius: 25px;
   padding: 20px 30px;
   padding-left: 40px;
   padding-right: 60px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   margin-top: 10px;
 }
 
 .c-input {
   width: 100%;
+<<<<<<< HEAD
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+=======
+
+>>>>>>> master
   margin-bottom: 15px;
   padding: 10px;
   font-size: 14px;
@@ -124,11 +194,16 @@ img.logo {
 .c-button {
   width: 100%;
   padding: 10px 10px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   font-size: 15px;
   color: #fff;
   text-transform: uppercase;
   border: 1px solid transparent;
   border-radius: 8px;
+<<<<<<< HEAD
   background-color: #F26522;
   cursor: pointer;
 }
@@ -138,6 +213,12 @@ img.logo {
           box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
 }
 
+=======
+  background-color: #f26522;
+  cursor: pointer;
+}
+
+>>>>>>> master
 a:link {
   text-decoration: none;
   color: #000;
@@ -154,7 +235,11 @@ a:visited {
 
 a:hover {
   text-decoration: underline;
+<<<<<<< HEAD
   color: #555555;
+=======
+  color: rgb(85, 85, 85);
+>>>>>>> master
   text-align: center;
 }
 
@@ -163,12 +248,17 @@ a:active {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .loginbutton {
+=======
+.plsgod {
+>>>>>>> master
   padding-bottom: 20px;
   padding-left: 90px;
   padding-right: 85px;
   padding-bottom: 40px;
 }
+<<<<<<< HEAD
 
 .navbar__link {
   padding-right: 30px;
@@ -179,3 +269,15 @@ a {
   font-size: 10px;
 }
 /*# sourceMappingURL=Login.css.map */
+=======
+.plsbutton {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.navbar__link {
+  padding-bottom: 40px;
+}
+a {
+  font-size: 10px;
+}
+>>>>>>> master

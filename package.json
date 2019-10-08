@@ -4,13 +4,17 @@
   "description": "My webpack project",
   "main": "server.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "node dist/server/index.js",
     "build": "npm run clean && npm run build-react && npm run build-server",
     "build-react": "webpack",
     "build-server": "babel -d ./dist/server ./server -s",
+    "build-watch": "webpack --watch & babel --watch -d ./dist/server ./server -s",
     "clean": "rm -rf dist && mkdir dist",
-    "dev": "webpack --mode development && node dist/server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run build-watch & nodemon --watch dist dist/server/index.js",
+    "test": "mocha --require @babel/polyfill --require @babel/register",
+    "lint": "npm run lint-client && npm run lint-server",
+    "lint-client": "eslint --fix --ext .jsx,.js client/",
+    "lint-server": "eslint --fix --ext .jsx,.js server/"
   },
   "repository": {
     "type": "git",
@@ -22,25 +26,63 @@
     "url": "https://github.com/ugms/asset-tracker/issues"
   },
   "homepage": "https://github.com/ugms/asset-tracker#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,css,json,md,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+<<<<<<< HEAD
     "react-router-dom": "^5.1.2"
+=======
+    "react-router-dom": "^5.1.2",
+    "sequelize": "^5.19.0"
+>>>>>>> master
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.15.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.1",
+    "mocha": "^6.2.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.2",
+    "prettier": "1.18.2",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
