@@ -1,0 +1,151 @@
+body {
+  background: #f9fbfd;
+  /* font-family: 'Quicksand', sans-serif; */
+}
+
+.blackbg {
+  width: 100%;
+  height: 200px;
+  background: #333333;
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+}
+.orangebg {
+  width: 100%;
+  height: 340px;
+  background: #f26522;
+  z-index: 1;
+  position: absolute;
+}
+.logo {
+  padding-left: 0px;
+}
+
+#signup {
+  padding-top: 200px;
+  padding-right: 680px;
+  padding-left: 680px;
+  padding-bottom: 20px;
+  z-index: 3;
+  position: relative;
+}
+#signup .card {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  z-index: 3;
+  position: relative;
+}
+#signup .card .card-title {
+  padding: 2rem 1.2rem 0;
+  margin-bottom: 0;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+}
+#signup .card .card-title h2 {
+  position: relative;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#signup .card .card-title h2:after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 50px;
+  background: #21253d;
+}
+.img-holder {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  height: 80px;
+}
+.form {
+  background: #fff;
+  border-radius: 25px;
+  padding: 20px 30px;
+  padding-left: 40px;
+  padding-right: 60px;
+
+  margin-top: 10px;
+}
+
+.c-input {
+  width: 100%;
+
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.c-button {
+  width: 100%;
+  padding: 10px 10px;
+
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #f26522;
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+  color: #000;
+  padding-top: 25px;
+  padding-left: 25px;
+  text-align: center;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(85, 85, 85);
+  text-align: center;
+}
+
+a:active {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.plsgod {
+  padding-bottom: 20px;
+  padding-left: 90px;
+  padding-right: 85px;
+  padding-bottom: 40px;
+}
+.plsbutton {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.navbar__link {
+  padding-bottom: 40px;
+}
+a {
+  font-size: 10px;
+}
