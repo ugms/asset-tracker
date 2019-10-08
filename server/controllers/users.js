@@ -1,7 +1,7 @@
 export default function(app, db) {
   // CRUD User - Create
   app.post("/users", (req, res) => {
-    console.log(req);
+    console.log(req.body);
     db.User.create({
       username: req.body.username,
       password: req.body.password
