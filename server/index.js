@@ -1,7 +1,6 @@
 // environment setup
 import dotenv from "dotenv";
 
-
 // dependencies
 import express from "express";
 import path from "path";
@@ -13,9 +12,7 @@ import Sequelize from "sequelize";
 // const passport = require('passport');
 import passport from "passport";
 import userController from "./controllers/users";
-import User from "./models/user";
 import assetController from "./controllers/assets";
-import Asset from "./models/asset";
 
 const result = process.env.NODE_ENV === "development" ? dotenv.config() : false;
 if (result) {
@@ -39,7 +36,7 @@ Object.keys(models).forEach(key => {
     models[key].associate(models);
   }
 });
-const {Strategy} = require("passport-local");
+const { Strategy } = require("passport-local");
 // import { strategy, LocalStrategy } from 'passport-local'
 // const db = require('./db'); // placeholder
 
@@ -70,7 +67,7 @@ app.use(bodyParser.json());
 // Local Authentication
 passport.use(
   new Strategy(function(username, password, done) {
-    User.findOne({ username }, function(err, user) {
+    models.User.findOne({ username }, function(err, user) {
       if (err) {
         return done(err);
       }
