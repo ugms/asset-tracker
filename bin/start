@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+import subprocess
+
+def start_database():
+    # check if Postgres is running
+    try:
+        db_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'status'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    except Exception as e:
+        print(f'Error starting PostgreSQL: {e}')
+        raise Exception(e)
+    stdout, stderr = db_status.communicate()
+    print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+    # if no server running
+    if '(PID:' not in stdout.decode('UTF-8'):
+        try:
+            startdb_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'start'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        except Exception as e:
+            print(f'Error starting PostgreSQL: {e}')
+            raise Exception(e)
+        stdout, stderr = startdb_status.communicate()
+        print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+
+def update_packages():
+    # install npm packages
+    try:
+        npm_install = subprocess.Popen(['npm', 'i'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    except Exception as e:
+        print(f'Error starting PostgreSQL: {e}')
+        raise Exception(e)
+    stdout, stderr = npm_install.communicate()
+    print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+
+def start_server():
+    # start the server
+    try:
+        npm_dev = subprocess.Popen(['npm', 'run', 'dev'])
+    except Exception as e:
+        print(f'Error starting PostgreSQL: {e}')
+        raise Exception(e)
+    stdout, stderr = npm_dev.communicate()
+    print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+
+def main():
+    print('Starting PostgreSQL')
+    start_database()
+    print('Updating NPM packages')
+    update_packages()
+    print('Starting dev server')
+    start_server()
+
+if __name__ == '__main__':
+    main()
