@@ -1,5 +1,5 @@
 const asset = (sequelize, DataTypes) => {
-  const Asset = sequelize.define('asset', {
+  const Asset = sequelize.define("asset", {
     chassie: {
       type: DataTypes.STRING,
     },

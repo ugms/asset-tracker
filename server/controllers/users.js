@@ -1,7 +1,6 @@
 export default function(app, db) {
   // CRUD User - Create
   app.post("/users", (req, res) => {
-    console.log(req.body);
     db.User.create({
       username: req.body.username,
       password: req.body.password
@@ -15,7 +14,7 @@ export default function(app, db) {
 
   // CRUD User - Update
   app.put("/post/:id", (req, res) => {
-    db.user
+    db.User
       .update(
         {
           username: req.body.username,
@@ -32,7 +31,7 @@ export default function(app, db) {
 
   // CRUD User - Destroy
   app.delete("/users/:id", (req, res) => {
-    db.user
+    db.User
       .destroy({
         where: {
           id: req.params.id

@@ -1,7 +1,7 @@
 export default function(app, db) {
   // CRUD User - Create
-  app.post("/assets", (req, res) =>
-    db.asset
+  app.post("/assets", (req, res) =>{
+    db.Asset
       .create({
         chassie: req.body.chassie,
         current_user: req.body.current_user,
@@ -15,16 +15,16 @@ export default function(app, db) {
         notes: req.body.notes
       })
       .then(result => res.json(result))
-  );
+  });
 
   // CRUD User - Index All
-  app.get("/assets/", (req, res) =>
-    db.asset.findAll().then(result => res.json(result))
-  );
+  app.get("/assets/", (req, res) =>{
+    db.Asset.findAll().then(result => res.json(result))
+  });
 
   // CRUD User - Update
-  app.put("/assets/:id", (req, res) =>
-    db.asset
+  app.put("/assets/:id", (req, res) => {
+    db.Asset
       .update(
         {
           chassie: req.body.chassie,
@@ -45,16 +45,16 @@ export default function(app, db) {
         }
       )
       .then(result => res.json(result))
-  );
+  });
 
   // CRUD User - Destroy
-  app.delete("/assets/:id", (req, res) =>
-    db.asset
+  app.delete("/assets/:id", (req, res) => {
+    db.Asset
       .destroy({
         where: {
           id: req.params.id
         }
       })
       .then(result => res.json(result))
-  );
+  });
 }

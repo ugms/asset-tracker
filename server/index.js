@@ -1,9 +1,6 @@
 // environment setup
 import dotenv from "dotenv";
 
-// Import models
-
-// Import controllers
 
 // dependencies
 import express from "express";
@@ -17,6 +14,8 @@ import Sequelize from "sequelize";
 import passport from "passport";
 import userController from "./controllers/users";
 import User from "./models/user";
+import assetController from "./controllers/assets";
+import Asset from "./models/asset";
 
 const result = process.env.NODE_ENV === "development" ? dotenv.config() : false;
 if (result) {
@@ -101,6 +100,7 @@ app.post(
 );
 
 userController(app, models);
+assetController(app, models);
 
 // app.get('/squirell', (req, res) => {
 //   console.log("We are here")
