@@ -2,17 +2,21 @@
 import dotenv from "dotenv";
 
 // Import models
-import User from "./models/user";
 
 // Import controllers
-import * as user-controller from "./controllers/users";
 
 // dependencies
 import express from "express";
 import path from "path";
+import bodyParser from "body-parser";
 
 // SQL / db
 import Sequelize from "sequelize";
+
+// const passport = require('passport');
+import passport from "passport";
+import userController from "./controllers/users";
+import User from "./models/user";
 
 const result = process.env.NODE_ENV === "development" ? dotenv.config() : false;
 if (result) {
@@ -28,17 +32,15 @@ const sequelize = new Sequelize(
   }
 );
 const models = {
-  User: sequelize.import("./models/user")
+  User: sequelize.import("./models/user"),
+  Asset: sequelize.import("./models/asset")
 };
 Object.keys(models).forEach(key => {
   if ("associate" in models[key]) {
     models[key].associate(models);
   }
 });
-
-// const passport = require('passport');
-import passport from 'passport'
-const Strategy = require('passport-local').Strategy;
+const {Strategy} = require("passport-local");
 // import { strategy, LocalStrategy } from 'passport-local'
 // const db = require('./db'); // placeholder
 
@@ -48,6 +50,12 @@ app.set("port", process.env.PORT || 3000);
 const REACT_DIR = path.join(__dirname, "../client");
 const HTML_FILE = path.join(REACT_DIR, "index.html");
 app.use(express.static(REACT_DIR));
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+app.use(bodyParser.json());
 
 // Passport.initalize middleware
 // app.configure(function() {
@@ -61,30 +69,38 @@ app.use(express.static(REACT_DIR));
 // });
 
 // Local Authentication
-passport.use(new Strategy(
-  function(username, password, done) {
-    User.findOne({ username: username }, function (err, user) {
-      if (err) { return done(err); }
-      if (!user) { return done(null, false); }
-      if (!user.verifyPassword(password)) { return done(null, false); }
+passport.use(
+  new Strategy(function(username, password, done) {
+    User.findOne({ username }, function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false);
+      }
+      if (!user.verifyPassword(password)) {
+        return done(null, false);
+      }
       return done(null, user);
     });
-  }
-));
-
+  })
+);
 
 // placeholder route
 app.get("/", (req, res) => {
   res.sendFile(HTML_FILE);
 });
 
-
 // placeholder: login
-app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+app.post(
+  "/login",
+  passport.authenticate("local", { failureRedirect: "/login" }),
   function(req, res) {
-    res.redirect('/');
-});
+    res.redirect("/");
+  }
+);
+
+userController(app, models);
 
 // app.get('/squirell', (req, res) => {
 //   console.log("We are here")
@@ -101,7 +117,6 @@ app.post('/login',
 //       // console.log("error: ", err)
 //     });
 // });
-
 
 // face the world
 const hotPort = app.get("port");
