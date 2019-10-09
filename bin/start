@@ -17,8 +17,10 @@ def start_database():
         except Exception as e:
             print(f'Error starting PostgreSQL: {e}')
             raise Exception(e)
-        stdout, stderr = startdb_status.communicate()
-        print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+        # stdout, stderr = startdb_status.communicate()
+        # print(stdout.decode('UTF-8'))
+        print("pg_ctl start successful")
+    return
 
 def update_packages():
     # install npm packages
