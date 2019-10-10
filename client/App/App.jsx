@@ -11,13 +11,8 @@ function App() {
     <div className="App">
       <Router>
 
-
-        <Route exact path="/Login" exact component= />
-
-
-        <Route exact path="/Dashboard" exact component= />
-
-
+        <Route exact path="/Login" exact component={Login} />
+        <Route exact path="/Dashboard" exact component={Dashboard} />
 
       </Router>
     </div >

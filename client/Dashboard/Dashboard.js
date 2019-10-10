@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './Dashboard.css'
+import './Dashboard.scss'
 import ItemRow from './ItemRow'
 import logo from './reporting.png'
 class Dashboard extends Component {

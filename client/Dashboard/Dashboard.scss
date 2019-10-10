@@ -1,6 +1,10 @@
 .gray_square {
   height:40vh;
   width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius:5px;
   background-color:#E5E5E5;
 }
@@ -8,7 +12,6 @@
 .squares {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-around;
   margin-top: 8vh;
   margin-right:8vw;
@@ -42,10 +45,11 @@
   font-size: 1.2em;
   font-weight:400;
   text-transform: uppercase;
-  margin-top:15px;
 }
 
 .blue_square {
+  display:flex;
+  justify-content: center;
   height:7vh;
   width: 25vw;
   border-radius:5px;
@@ -59,29 +63,27 @@
   align-items: center;
 }
 
-.reporting_inner_square {
-  height:20vh;
-  width:15vw;
+.reporting_image {
+  height:150px;
+  width:200px;
   margin:5px;
-  background-color:rgb(178,219,250);
 }
 
+a:link {
+  color:white;
+  text-transform: capitalize; 
+}
 
 .dashboard_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:5px;
+  height:40px;
+  width:100px;
+  border-radius: 5px;
   background-color: #50AEF4;
-  color:white;
-  font-size:1em;
-  text-transform: capitalize;
 }
-
-.see_items_button {
-  background-color: #50AEF4;
-  color:white;
-  font-size:1em;
-  text-transform: capitalize;
-
-}
-
 
 .inventory_inner_squares {
   display: flex;
