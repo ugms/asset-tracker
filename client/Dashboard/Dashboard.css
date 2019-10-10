@@ -54,6 +54,13 @@
   width: 15vw;
   margin: 5px;
   background-color: #b2dbfa;
+  display: flexbox;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .square_heading {
@@ -150,5 +157,20 @@ a:link {
   height: 4.5vh;
   width: 15vw;
   margin: 5px;
+}
+
+.laptop_logo {
+  height: 65px;
+  width: 70px;
+}
+
+.tablet_logo {
+  height: 60px;
+  width: 50px;
+}
+
+.inventory_inner_square {
+  text-transform: uppercase;
+  font-size: 12px;
 }
 /*# sourceMappingURL=Dashboard.css.map */

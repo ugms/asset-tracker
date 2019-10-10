@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './Dashboard.scss'
 import ItemRow from './ItemRow'
 import logo from './reporting.png'
+import logo1 from './laptop.svg'
+import logo2 from './tablet.svg'
 import Navbar from '../NavBar/NavBar'
 class Dashboard extends Component {
   constructor(props) {
@@ -19,11 +21,16 @@ class Dashboard extends Component {
           {/*Checkout*/}
           <div className='gray_square checkout-square'>
             <h1 className='square_heading'>Checkout</h1>
-
             <div className='inner_squares'>
-              <div className='inner_square'>Laptop</div>
+              <div className='inner_square'>
+                <img className='laptop_logo' src={logo1} />
 
-              <div className='inner_square'>Tablet</div>
+              </div>
+
+              <div className='inner_square'>
+                <img className='tablet_logo' src={logo2} />
+
+              </div>
             </div>
 
             <div className="dashboard_button" >

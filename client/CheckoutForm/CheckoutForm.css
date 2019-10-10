@@ -1,0 +1,51 @@
+.checkout_square {
+  background-color: #e5e5e5;
+  width: 500px;
+  height: 60vh;
+  border-radius: 5px;
+  margin: 15vh;
+}
+
+.checkout_form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkout_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input_field {
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  margin: 10px;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+/*# sourceMappingURL=CheckoutForm.css.map */
