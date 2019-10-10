@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../Navbar/Navbar'
+import './InventoryOverview.scss'
 
 
 class InventoryOverview extends Component {
@@ -10,8 +11,7 @@ class InventoryOverview extends Component {
   render() {
     return (
       <div>
-
-        <h1> This is the Inventory Overview Page!</h1>
+        <Navbar />
 
         {/* Category Section */}
         <div className='category_container'>

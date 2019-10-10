@@ -4,8 +4,27 @@
   width: 20vw;
 }
 
-.categories {
-  background-color: gray;
-  height:100%;
-  width: 20vw;
+// .categories {
+//   background-color: gray;
+//   height:100vh;
+//   width: 20vw;
+// }
+
+.inventory_overview_buttons {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+button {
+  background-color:#707070;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size:12px;
+  font-weight: bold;
+  color:white;
+  height:45px;
+  width:85px;
+  margin:15px;
 }

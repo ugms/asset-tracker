@@ -1,19 +1,25 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-
+import { HashRouter as Router, Route } from "react-router-dom";
 // import logo from "../static/logo.svg";
-import Login from "../Login/Login.jsx";
+import Login from '../Login/Login.jsx';
+import Dashboard from '../Dashboard/Dashboard.js';
+import InventoryOverview from '../InventoryOverview/InventoryOverview.jsx'
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Route path="/login" exact component={Login} />
-        <Login />
-      </BrowserRouter>
-    </div>
+      <Router>
+
+        <Route exact path="/Login" exact component={Login} />
+        <Route exact path="/Dashboard" exact component={Dashboard} />
+        <Route exact path="/Inventory-Overview" exact component={InventoryOverview} />
+
+      </Router>
+    </div >
+
+
   );
 }
 
