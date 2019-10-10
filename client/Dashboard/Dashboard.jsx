@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './Dashboard.css'
+import './Dashboard.scss'
 class Dashboard extends Component {
   constructor(props) {
     super(props)
