@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
 import Dashboard from '/Dashboard/Dashboard'
 
 
@@ -15,3 +16,10 @@ const Index = () => {
 
 };
 ReactDOM.render(<Index />, document.getElementById('root'));
+=======
+import './styles.scss';
+import App from './App'
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
+>>>>>>> AnniePawl/login_page

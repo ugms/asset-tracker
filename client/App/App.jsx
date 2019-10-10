@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 // import logo from "../static/logo.svg";
 import Login from "../Login/Login.jsx";
@@ -9,10 +9,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Route path="/login" exact component={Login} />
+      <Router>
+        <Route path="/Login" exact component={Login} />
         <Login />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
