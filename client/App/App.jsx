@@ -1,18 +1,16 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
-
-// import logo from "../static/logo.svg";
-import Login from "../Login/Login.jsx";
-
+import logo from "../static/logo.svg";
 import "./App.css";
+import Login from "../Login/Login.jsx";
+import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Route path="/Login" exact component={Login} />
+      <BrowserRouter>
+        <Route path="/login" exact component={Login} />
         <Login />
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
