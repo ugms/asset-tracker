@@ -133,12 +133,22 @@ img.logo{
   }
 
   // Registration Link Styles
-  a:link {
+
+  .navbar__link {
     text-decoration: none;
     color: #000;
     padding-top: 25px;
     padding-left: 25px;
     text-align: center;
+  }
+
+
+  a:link {
+    // text-decoration: none;
+    // color: #000;
+    // padding-top: 25px;
+    // padding-left: 25px;
+    // text-align: center;
   }
   
   a:visited {

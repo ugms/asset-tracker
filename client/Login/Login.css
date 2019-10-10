@@ -147,7 +147,7 @@ img.logo {
   padding-bottom: 40px;
 }
 
-a:link {
+.navbar__link {
   text-decoration: none;
   color: #000;
   padding-top: 25px;

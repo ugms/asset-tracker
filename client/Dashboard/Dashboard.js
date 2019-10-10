@@ -21,12 +21,12 @@ class Dashboard extends Component {
             <h1 className='square_heading'>Checkout</h1>
 
             <div className='inner_squares'>
-              <div className='inner_square'></div>
+              <div className='inner_square'>Laptop</div>
 
-              <div className='inner_square'></div>
+              <div className='inner_square'>Tablet</div>
             </div>
 
-            <div className="dashboard_button">
+            <div className="dashboard_button" >
               <Link
                 to="/InventoryOverview">
                 See All Items
@@ -39,10 +39,9 @@ class Dashboard extends Component {
             <h1 className='square_heading'>Inventory Overview</h1>
             {/* Inventory Highlights */}
             <div className='inventory_inner_squares'>
-              <div className='inventory_inner_square'></div>
-              <div className='inventory_inner_square'></div>
-              <div className='inventory_inner_square'></div>
-              <div className='inventory_inner_square'></div>
+              <div className='inventory_inner_square'>Office Supplies</div>
+              <div className='inventory_inner_square'>Computers</div>
+              <div className='inventory_inner_square'>Miscellaneous</div>
             </div>
             <div className="dashboard_button">
               <Link>See All Categories</Link>
