@@ -28,7 +28,7 @@ class Login extends Component {
 
   handleInput(param, e) {
     let value = e.target.value;
-
+ 
     console.log(param);
 
     if (param === "name") {
