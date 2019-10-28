@@ -5,6 +5,7 @@ import Login from '../Login/Login.jsx';
 import Dashboard from '../Dashboard/Dashboard.js';
 import InventoryOverview from '../InventoryOverview/InventoryOverview.jsx'
 import CheckoutForm from '../CheckoutForm/CheckoutForm.jsx'
+import NewItemForm from '../NewItemForm/NewItemForm.jsx'
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/Dashboard" exact component={Dashboard} />
         <Route exact path="/Inventory-Overview" exact component={InventoryOverview} />
         <Route exact path="/Checkout-Form" exact component={CheckoutForm} />
+        <Route exact path="/New-Item-Form" exact component={NewItemForm} />
 
       </Router>
     </div >

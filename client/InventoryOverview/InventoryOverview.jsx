@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import './InventoryOverview.scss'
-import AssetRow from './AssetRow.jsx'
+// import AssetRow from './AssetRow.jsx'
+import AssetTable from './AssetTable.jsx'
 
 class InventoryOverview extends Component {
   constructor(props) {
@@ -39,16 +41,38 @@ class InventoryOverview extends Component {
 
         {/* Inventory Overview Buttons */}
         <div className='inventory_overview_buttons'>
-          <button>New Item</button>
-          <button>Share</button>
-          <button>Print</button>
+          <div className='inventory_overview_button new_item_button'>
+            <Link
+              to="/New-Item-Form">
+              New Item
+            </Link>
+          </div>
+
+          <div className='inventory_overview_button share_button'>
+            <Link
+              to="/New-Item-Form">
+              Share
+            </Link>
+          </div>
+
+          <div className='inventory_overview_button print_button'>
+            <Link
+              to="/New-Item-Form">
+              Print
+            </Link>
+          </div>
+
         </div>
 
         {/* Search */}
 
         {this.state.assets.map((item) => {
-          return <AssetRow key={item.id} assets={item} />
+          return <AssetTable key={item.id} assets={item} />
         })}
+
+        {/* {this.state.assets.map((item) => {
+          return <AssetRow key={item.id} assets={item} />
+        })} */}
       </div>
     )
   }

@@ -19,7 +19,6 @@ const AssetRow = ({ assets }) => {
 
   return (
     <div>
-      <h2>Testing</h2>
       <div className="item_row">
         <div className="item_row_chassie ">{assets.chassie}</div>
         <div className='item_row_current_user'>{assets.current_user}</div>

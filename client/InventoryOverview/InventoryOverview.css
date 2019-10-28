@@ -20,15 +20,27 @@
           justify-content: center;
 }
 
-button {
+.inventory_overview_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #707070;
   border-radius: 5px;
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
-  color: white;
   height: 45px;
   width: 85px;
   margin: 15px;
+}
+
+.inventory_overview_button a {
+  color: white;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=InventoryOverview.css.map */

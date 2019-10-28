@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,WAAW,EAAE,iBAAiB;EAC9B,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,IAAI;CACZ;;AAED,AAAA,EAAE,EAAE,EAAE,CAAC;EACL,MAAM,EAAE,iBAAiB;EACzB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,GAAG;CACb;;AAED,AAAA,EAAE,AAAA,UAAW,CAAA,IAAI,EAAE;EACjB,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "AssetTable.scss"
+    ],
+    "names": [],
+    "file": "AssetTable.css"
+}
