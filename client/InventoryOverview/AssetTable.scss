@@ -1,7 +1,14 @@
+.table_container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:30px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 }
 
 td, th {

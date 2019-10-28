@@ -5,9 +5,12 @@ import './AssetTable.scss'
 const AssetTable = ({ assets }) => {
 
   return (
-    <table>
-      {/* Table Headers */}
-      <tr>
+    <div className='table_container'>
+
+
+      <table>
+        {/* Table Headers */}
+        {/* <tr> */}
         <th>Chassie</th>
         <th>Current User</th>
         <th>Previous User</th>
@@ -19,64 +22,74 @@ const AssetTable = ({ assets }) => {
         <th>Serial Number</th>
         <th>Purchase Date</th>
         <th>Notes</th>
-      </tr>
+        {/* </tr> */}
 
-      {/* Chassie */}
-      <tr>
-        <td> {assets.chassie}</td>
-      </tr>
+        {/* Chassie */}
+        <tr>
+          <td> {assets.chassie}</td>
+          <td>{assets.current_user}</td>
+          <td>{assets.previous_user}</td>
+          <td>{assets.name2}</td>
+          <td>{assets.manufacturer}</td>
+          <td>{assets.manufacturer}</td>
+          <td>{assets.model}</td>
+          <td>{assets.os}</td>
+          <td>{assets.serial_number}</td>
+          <td>{assets.purchase_date}</td>
+          <td>{assets.serial_notes}</td>
 
-      {/* Current User */}
-      <tr>
+        </tr>
+
+        {/* Current User */}
+        {/* <tr>
         <td>{assets.current_user}</td>
-      </tr>
+      </tr> */}
 
-      {/* Previous User */}
-      <tr>
+        {/* Previous User */}
+        {/* <tr>
         <td>{assets.previous_user}</td>
-      </tr>
+      </tr> */}
 
-      {/*Name2*/}
-      <tr>
+        {/*Name2*/}
+        {/* <tr>
         <td>{assets.name2}</td>
-      </tr>
+      </tr> */}
 
-      {/*Manufactuer*/}
-      <tr>
+        {/* Manufactuer */}
+        {/* <tr>
         <td>{assets.manufacturer}</td>
-      </tr>
+      </tr> */}
 
 
-      {/*Model*/}
-      <tr>
+        {/*Model*/}
+        {/* <tr>
         <td>{assets.model}</td>
-      </tr>
+      </tr> */}
 
-      {/*OS*/}
-      <tr>
+        {/*OS*/}
+        {/* <tr>
         <td>{assets.os}</td>
-      </tr>
+      </tr> */}
 
 
-      {/*Serial Number*/}
-      <tr>
+        {/*Serial Number*/}
+        {/* <tr>
         <td>{assets.serial_number}</td>
-      </tr>
+      </tr> */}
 
 
-      {/*Purchase Date*/}
-      <tr>
+        {/*Purchase Date*/}
+        {/* <tr>
         <td>{assets.purchase_date}</td>
-      </tr>
+      </tr> */}
 
-      {/*Notes*/}
-      <tr>
+        {/*Notes*/}
+        {/* <tr>
         <td>{assets.serial_notes}</td>
-      </tr>
+      </tr> */}
 
-    </table>
-
-
+      </table>
+    </div>
 
 
   )
