@@ -10,23 +10,23 @@ const AssetTable = ({ assets }) => {
 
       <table>
         {/* Table Headers */}
-        {/* <tr> */}
-        <th>Chassie</th>
-        <th>Current User</th>
-        <th>Previous User</th>
-        <th>Previous User</th>
-        <th>Name 2</th>
-        <th>Manufacturer</th>
-        <th>Model</th>
-        <th>OS</th>
-        <th>Serial Number</th>
-        <th>Purchase Date</th>
-        <th>Notes</th>
-        {/* </tr> */}
+        <tr>
+          <th>Chassie</th>
+          <th>Current User</th>
+          <th>Previous User</th>
+          <th>Previous User</th>
+          <th>Name 2</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>OS</th>
+          <th>Serial Number</th>
+          <th>Purchase Date</th>
+          <th>Notes</th>
+        </tr>
 
         {/* Chassie */}
         <tr>
-          <td> {assets.chassie}</td>
+          <td>{assets.chassie}</td>
           <td>{assets.current_user}</td>
           <td>{assets.previous_user}</td>
           <td>{assets.name2}</td>

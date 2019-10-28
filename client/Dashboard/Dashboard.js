@@ -55,6 +55,12 @@ class Dashboard extends Component {
                 to="/Inventory-Overview">
                 See All Items
             </Link>
+              <div className="dashboard_button">
+                <Link
+                  to="/Inventory-Overview-Test">
+                  See All Items TEST
+            </Link>
+              </div>
             </div>
           </div>
 
