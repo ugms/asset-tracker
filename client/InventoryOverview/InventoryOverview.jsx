@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar.jsx'
 import './InventoryOverview.scss'
 // import AssetRow from './AssetRow.jsx'
 // import Table from './Table.jsx'
@@ -68,14 +68,33 @@ class InventoryOverview extends Component {
         </div>
 
         {/* Search */}
+        <div className='overview-section'>
 
-        {this.state.assets.map((item) => {
-          return <AssetTable key={item.id} assets={item} />
-        })}
+          <table>
+            {/* Table Headers */}
+            <tr>
+              <th>Chassie</th>
+              <th>Current User</th>
+              <th>Previous User</th>
+              <th>Previous User</th>
+              <th>Name 2</th>
+              <th>Manufacturer</th>
+              <th>Model</th>
+              <th>OS</th>
+              <th>Serial Number</th>
+              <th>Purchase Date</th>
+              <th>Notes</th>
+            </tr>
+            {this.state.assets.map((item) => {
+              return <AssetTable key={item.id} assets={item} />
+            })}
 
-        {/* {this.state.assets.map((item) => {
-          return <AssetRow key={item.id} assets={item} />
-        })} */}
+            {/* {this.state.assets.map((item) => {
+            return <AssetRow key={item.id} assets={item} />
+          })} */}
+          </table>
+        </div>
+
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './CheckoutForm.scss'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar.jsx'
 
 class CheckoutForm extends Component {
   constructor(props) {

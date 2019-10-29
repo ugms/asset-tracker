@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import logo from './home.svg'
-import './Navbar.scss'
+import './Navbar.css'
 
 class Navbar extends Component {
   constructor(props) {
