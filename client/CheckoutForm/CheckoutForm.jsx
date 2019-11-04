@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './CheckoutForm.scss'
-import Navbar from '../Navbar/Navbar'
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -22,19 +21,19 @@ class CheckoutForm extends Component {
       <div>
         <div className='checkout_form_container'>
           <div className='checkout_square'>
-            <h1>Checkout Form</h1>
+            <h1 className='checkout_title'>Checkout Form</h1>
             <form className='checkout_form'>
 
               {/* Name Field */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Name' />
 
               {/* Company ID Field */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Company ID'
@@ -42,42 +41,42 @@ class CheckoutForm extends Component {
 
               {/* Email Address Field */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Email Address' />
 
               {/* Phone Number Field  */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Phone Number' />
 
               {/* Duration of Checkout Field */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Duration of Checkout' />
 
               {/* Date Field */} {/* TODO - make dropdown calendar */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='type'
                 value=''
                 placeholder='Date' />
 
               {/* Reason for Checkout Field */}
               <input
-                className='input_field'
+                className='checkout_input_field'
                 type='text'
                 value=''
                 placeholder='Reason for Checkout' />
 
             </form>
 
-            <button>Checkout</button>
+            <button className='checkout_form_button'>Checkout</button>
           </div>
         </div>
       </div>
