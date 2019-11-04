@@ -29,21 +29,14 @@ class InventoryOverview extends Component {
   }
 
 
-
   render() {
     return (
       <div>
         <Navbar />
 
-        {/* Category Section */}
-        <div className='category_container'>
-          <div className='categories'>
-
-          </div>
-        </div>
-
         {/* Inventory Overview Buttons */}
         <div className='inventory_overview_buttons'>
+          {/* New Item Button */}
           <div className='inventory_overview_button new_item_button'>
             <Link
               to="/New-Item-Form">
@@ -51,6 +44,7 @@ class InventoryOverview extends Component {
             </Link>
           </div>
 
+          {/* Share Button */}
           <div className='inventory_overview_button share_button'>
             <Link
               to="/New-Item-Form">
@@ -58,6 +52,7 @@ class InventoryOverview extends Component {
             </Link>
           </div>
 
+          {/* Print Button*/}
           <div className='inventory_overview_button print_button'>
             <Link
               to="/New-Item-Form">
@@ -67,15 +62,23 @@ class InventoryOverview extends Component {
 
         </div>
 
-        {/* Search */}
+        <div className='inventory_body'>
 
-        {this.state.assets.map((item) => {
-          return <AssetTable key={item.id} assets={item} />
-        })}
+          {/* Category Section */}
+          <div className='category_container'>
+            <div className='categories'>
+            </div>
+          </div>
 
-        {/* {this.state.assets.map((item) => {
-          return <AssetRow key={item.id} assets={item} />
-        })} */}
+          {/* ITEM TABLE */}
+          <div className='item_table_container'>
+            {this.state.assets.map((item) => {
+              return <AssetTable key={item.id} assets={item} />
+            })}
+          </div>
+
+        </div>
+
       </div>
     )
   }
