@@ -1,11 +1,10 @@
 body {
   background: #f9fbfd;
-  /* font-family: 'Quicksand', sans-serif; */
 }
 
 .blackbg {
   width: 100%;
-  height: 200px;
+  height: 180px;
   background: #333333;
   z-index: 5;
   position: absolute;
@@ -24,12 +23,25 @@ body {
   padding-left: -10px;
 }
 
+.img-holder {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img.logo {
+  display: block;
+  margin-left: 110px;
+  margin-top: 110px;
+  margin-bottom: 20px;
+  height: 120px;
+}
+
 #login {
   padding-top: 285px;
-  /* margin-right: 600px;
-  margin-left: 600px; */
   padding-bottom: 20px;
-  z-index: 3;
+  z-index: 6;
   position: absolute;
   width: 300px;
   left: calc(50% - 150px);
@@ -87,21 +99,6 @@ body {
   background: #21253d;
 }
 
-.img-holder {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-img.logo {
-  display: block;
-  margin-left: 110px;
-  margin-top: 110px;
-  margin-bottom: 20px;
-  height: 120px;
-}
-
 .form {
   background: #fff;
   border-radius: 25px;
@@ -114,6 +111,7 @@ img.logo {
 .c-input {
   text-align: center;
   width: 100%;
+  height: 26px;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
   margin-bottom: 15px;
@@ -125,8 +123,10 @@ img.logo {
 
 .c-button {
   width: 100%;
+  height: 45px;
   padding: 10px 10px;
   font-size: 15px;
+  font-weight: 500;
   color: #fff;
   text-transform: uppercase;
   border: 1px solid transparent;
@@ -147,11 +147,9 @@ img.logo {
   padding-bottom: 40px;
 }
 
-.navbar__link {
+a:link {
   text-decoration: none;
   color: #000;
-  padding-top: 25px;
-  padding-left: 25px;
   text-align: center;
 }
 
@@ -172,15 +170,16 @@ a:active {
   text-align: center;
 }
 
-.navbar__link {
-  padding-right: 30px;
+.signup_link_container {
+  -webkit-transform: translate(0px, -25px);
+          transform: translate(0px, -25px);
 }
 
-.signup_link {
-  margin-bottom: 100px;
+a.signup_link {
+  font-size: 13px;
 }
 
-a {
-  font-size: 12px;
+.register_now_span {
+  font-weight: bold;
 }
 /*# sourceMappingURL=Login.css.map */

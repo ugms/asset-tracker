@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Login.css";
+import "./Login.scss";
 import { Link } from "react-router-dom";
 
 const Input = props => (
@@ -28,7 +28,7 @@ class Login extends Component {
 
   handleInput(param, e) {
     let value = e.target.value;
- 
+
     console.log(param);
 
     if (param === "name") {
@@ -48,12 +48,9 @@ class Login extends Component {
             /></div>
           <section id="login">
             <div className="container ">
-              {/* <div className="row"> */}
-              {/* <div className="col-md-10 mx-auto"> */}
-              <div className="card">
-                {/* <div className="row mr-0 ml-0 d-flex h-100"> */}
 
-                {/* <div className="col-md-6 form"> */}
+              <div className="card">
+
                 <div className="card-title">
 
                   <h2>LOGIN</h2>
@@ -76,26 +73,23 @@ class Login extends Component {
                   <div class="loginbutton">
                     <Button text="LOGIN" onClick={this.handleSubmit} /></div>
 
-                  <div className='signup_link'>
-                    <Link to="/signup" className="navbar__link">
-                      Don't have an account? Register Now
-                            </Link>
+                  <div className='signup_link_container'>
+                    <Link to="/signup" className="signup_link">Don't have an account?<br /> <span className='register_now_span'>  Register Now</span>
+                    </Link>
                   </div>
-
 
 
                 </div>
               </div>
             </div>
-            {/* </div>{" "} */}
-            {/* End of card */}
-            {/* </div> */}
-            {/* </div> */}
-            {/* </div> */}
+
           </section>
+
         </div>
-      </div >
+      </div>
     );
   }
 }
+
+
 export default Login;
