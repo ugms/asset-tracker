@@ -1,6 +1,29 @@
+.inventory_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+}
+
 .category_container {
   background-color: gray;
   height: 100%;
+  width: 20vw;
+}
+
+.item_table_container {
+  background-color: #a5a5a5;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.category_container {
+  background-color: gray;
+  height: 100vh;
   width: 20vw;
 }
 
@@ -18,6 +41,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 15px;
 }
 
 .inventory_overview_button {
