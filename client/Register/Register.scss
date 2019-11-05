@@ -1,6 +1,6 @@
 // Page Background Styles
 body{
-  background:#f9fbfd;
+  background:white
 }
 
 .blackbg{
@@ -40,8 +40,8 @@ img.logo{
   height:120px;
 }
 
-// Login Card Styles
-#login{
+// register Card Styles
+#register{
   padding-top: 285px;
   padding-bottom: 20px;
   z-index: 6;
@@ -54,7 +54,7 @@ img.logo{
   align-items: baseline;
 }
 
-#login .card{
+#register .card{
   background-color:#fff;
   border-radius:25px;
   box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
@@ -63,7 +63,7 @@ img.logo{
 }
 
 // Card Title Styles
-#login .card .card-title{
+#register .card .card-title{
   padding: 2rem 1.2rem 0;
   margin-bottom:0;
   text-align:center;
@@ -71,7 +71,7 @@ img.logo{
   position: relative;
 }
 
-#login .card .card-title h2{
+#register .card .card-title h2{
   color:#333333;
   position:relative;
   font-size:1.2rem;
@@ -82,7 +82,7 @@ img.logo{
 }
 
 // Title Underline
-#login .card .card-title h2:after{
+#register .card .card-title h2:after{
   position:absolute;
   content:'';
   bottom:-10px;
@@ -122,9 +122,8 @@ img.logo{
   
   // Button Styles
 .c-button {
-    width: 100%;
+    width: 150px;
     height:45px;
-    padding: 10px 10px;
     font-size: 15px;
     font-weight: 500;
     color: #fff;
@@ -136,17 +135,15 @@ img.logo{
 
   }
   .c-button:hover{
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
     transform: scale(.95)
   }
 
- 
-
-  .loginbutton {
-    padding-bottom: 20px;
+  .register_button {
+    padding-bottom: 35px;
     padding-left: 90px;
     padding-right: 85px;
-    padding-bottom: 40px;
+    padding-top:-15px;
   }
 
 
@@ -174,12 +171,12 @@ img.logo{
     text-align: center;
   }
 
-.register_link_container{
+.login_link_container{
 
   transform: translate(0px,-25px);
 }
 
-a.register_link{
+a.login_link{
   font-size: 13px;
 }
 

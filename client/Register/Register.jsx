@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Login.scss";
+import "./Register.scss";
 import { Link } from "react-router-dom";
 
 const Input = props => (
@@ -17,10 +17,11 @@ const Button = props => (
   </button>
 );
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: { value: "" },
       email: { value: "" },
       password: { value: "" }
     };
@@ -46,20 +47,28 @@ class Login extends Component {
             <img src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
               className="logo"
             /></div>
-          <section id="login">
+          <section id="register">
             <div className="container ">
 
               <div className="card">
 
                 <div className="card-title">
 
-                  <h2>LOGIN</h2>
+                  <h2>register</h2>
                 </div>
                 <div className="card-body">
                   <form className="form">
+
                     <Input
                       type="text"
-                      placeholder="USERNAME"
+                      placeholder="NAME"
+                      value={this.state.name.value}
+                      onKeyUp={e => this.handleInput("name", e)}
+                    />
+
+                    <Input
+                      type="text"
+                      placeholder="USERNAME/Email"
                       value={this.state.email.value}
                       onKeyUp={e => this.handleInput("email", e)}
                     />
@@ -70,11 +79,12 @@ class Login extends Component {
                       onKeyUp={e => this.handleInput("password", e)}
                     />
                   </form>
-                  <div class="loginbutton">
-                    <Button text="LOGIN" onClick={this.handleSubmit} /></div>
+                  <div class="register_button">
+                    <Button
+                      text="register" onClick={this.handleSubmit} /></div>
 
-                  <div className='register_link_container'>
-                    <Link to="/Register" className="register_link">Don't have an account?<br /> <span className='register_now_span'>  Register Now</span>
+                  <div className='login_link_container'>
+                    <Link to="/Login" className="login_link">Already Have an Account?<br /> <span className='register_now_span'>  Login Here</span>
                     </Link>
                   </div>
 
@@ -92,4 +102,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default Register;
