@@ -1,12 +1,12 @@
-.checkout_square {
+.new_item_square {
   background-color: #e5e5e5;
   width: 500px;
-  height: 75vh;
+  height: 680px;
   border-radius: 5px;
-  margin: 15vh;
+  margin: 5vh;
 }
 
-.checkout_form_container {
+.new_item_form_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,7 +18,7 @@
           align-items: center;
 }
 
-.checkout_form {
+.new_item_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,18 +34,44 @@
           align-items: center;
 }
 
-.input_field {
+.new_item_input_field {
   border-radius: 5px;
-  width: 300px;
-  height: 30px;
+  width: 330px;
+  height: 35px;
   margin: 10px;
+  font-size: 14px;
+  text-indent: 10px;
+  -webkit-box-shadow: 0 0 2px #666 inset;
+          box-shadow: 0 0 2px #666 inset;
+  border: none;
 }
 
-h1 {
+.new_item_input_field:hover {
+  background-color: #abdbff;
+}
+
+h1.new_item_title {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
   font-weight: 400;
   text-transform: uppercase;
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+.new_item_form_button {
+  background-color: #50AEF4;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  color: #242424;
+  height: 50px;
+  width: 100px;
+  margin: 15px;
+}
+
+.new_item_form_button:hover {
+  background-color: #505050;
+  color: white;
 }
 /*# sourceMappingURL=NewItemForm.css.map */
