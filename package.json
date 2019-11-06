@@ -83,6 +83,7 @@
     "nodemon": "^1.19.2",
     "prettier": "1.18.2",
     "sass-loader": "^8.0.0",
+    "sequelize-test-helpers": "^1.1.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
