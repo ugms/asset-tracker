@@ -21,21 +21,19 @@ const {
   checkPropertyExists
 } = require('sequelize-test-helpers')
 
-const UserModel = require('../../../server/models/user')
+const AssetModel = require('../../../server/models/asset')
 
-describe('server/models/User', () => {
-  const User = UserModel(sequelize, dataTypes)
-  const user = new User()
+describe('server/models/Asset', () => {
+  const Asset = AssetModel(sequelize, dataTypes)
+  const asset = new Asset()
 
-  checkModelName(User)('User')
+  checkModelName(Asset)('Asset')
 
   context('properties', () => {
-    ;['username', 'password'].forEach(
+    ;['chassie', 'current_user', 'previous_user', 'name2', 'manufacturer',
+    'model', 'os', 'serial_number', 'purchase_date', 'notes'].forEach(
       checkPropertyExists(user)
     )
   })
 
-  // context('indexes', () => {
-  //   ;['email', 'token'].forEach(checkUniqueIndex(user))
-  // })
 })
