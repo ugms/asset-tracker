@@ -1,3 +1,9 @@
+@mixin center_flex {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
 .gray_square {
   height:40vh;
   width: 25vw;
@@ -7,6 +13,7 @@
   align-items: center;
   border-radius:5px;
   background-color:#E5E5E5;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .squares {
@@ -32,7 +39,8 @@
   background-color:rgb(178,219,250);
   display: flexbox;
   justify-content: center;
-  align-items:center
+  align-items:center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .square_heading {
@@ -57,6 +65,7 @@
   width: 25vw;
   border-radius:5px;
   background-color:#50AEF4;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .reporting_square {
@@ -70,23 +79,27 @@
   height:150px;
   width:200px;
   margin:5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-a:link{
+a.dashboard_link{
   text-decoration:none;
   color: white;
-  text-transform: capitalize; 
+  text-transform: capitalize;
+  text-align: center; 
+}
+
+a.dashboard_link:visited {
+  color:white;
 }
 
 .dashboard_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin:5px;
   height:40px;
   width:100px;
   border-radius: 5px;
   background-color: #50AEF4;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .inventory_inner_squares {
@@ -95,11 +108,15 @@ a:link{
   justify-content: center;
   align-items: center;
 }
+
 .inventory_inner_square {
+ @include center_flex();
   background-color: white;
+  border-radius: 3px;
   height:4.5vh;
   width: 15vw;
   margin:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .laptop_logo {

@@ -34,7 +34,7 @@ class Dashboard extends Component {
             </div>
 
             <div className="dashboard_button" >
-              <Link
+              <Link className='dashboard_link'
                 to="/Checkout-Form">
                 Checkout Item
             </Link>
@@ -51,7 +51,7 @@ class Dashboard extends Component {
               <div className='inventory_inner_square'>Miscellaneous</div>
             </div>
             <div className="dashboard_button">
-              <Link
+              <Link className='dashboard_link'
                 to="/Inventory-Overview">
                 See All Items
             </Link>
@@ -66,7 +66,7 @@ class Dashboard extends Component {
 
 
             <div className="dashboard_button">
-              <Link>See Reporting</Link>
+              <Link className='dashboard_link'>See Reporting</Link>
             </div>
           </div>
         </div>
