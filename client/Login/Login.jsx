@@ -27,7 +27,7 @@ class Login extends Component {
   }
 
   handleInput(param, e) {
-    let value = e.target.value;
+    const { value } = e.target;
 
     console.log(param);
 
@@ -41,11 +41,14 @@ class Login extends Component {
 
         <div>
 
-          <div class="blackbg"></div>
-          <div class="orangebg">
-            <img src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
+          <div className="blackbg" />
+          <div className="orangebg">
+            <img
+              src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
+              alt='upwardly global logo'
               className="logo"
-            /></div>
+            />
+          </div>
           <section id="login">
             <div className="container ">
 
@@ -70,11 +73,16 @@ class Login extends Component {
                       onKeyUp={e => this.handleInput("password", e)}
                     />
                   </form>
-                  <div class="loginbutton">
-                    <Button text="LOGIN" onClick={this.handleSubmit} /></div>
+                  <div className="loginbutton">
+                    <Button type='submit ' text="LOGIN" onClick={this.handleSubmit} />
+                  </div>
 
                   <div className='register_link_container'>
-                    <Link to="/Register" className="register_link">Don't have an account?<br /> <span className='register_now_span'>  Register Now</span>
+                    <Link to="/Register" className="register_link">
+                      Don't have an account?
+                      <br />
+
+                      <span className='register_now_span'>  Register Now</span>
                     </Link>
                   </div>
 

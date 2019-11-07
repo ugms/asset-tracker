@@ -28,7 +28,7 @@ class Register extends Component {
   }
 
   handleInput(param, e) {
-    let value = e.target.value;
+    const { value } = e.target;
 
     console.log(param);
 
@@ -42,11 +42,14 @@ class Register extends Component {
 
         <div>
 
-          <div class="blackbg"></div>
-          <div class="orangebg">
-            <img src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
+          <div className="blackbg" />
+          <div className="orangebg">
+            <img
+              src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
               className="logo"
-            /></div>
+              alt='upwardly global logo'
+            />
+          </div>
           <section id="register">
             <div className="container ">
 
@@ -68,7 +71,7 @@ class Register extends Component {
 
                     <Input
                       type="text"
-                      placeholder="USERNAME/Email"
+                      placeholder="EMAIL"
                       value={this.state.email.value}
                       onKeyUp={e => this.handleInput("email", e)}
                     />
@@ -79,12 +82,19 @@ class Register extends Component {
                       onKeyUp={e => this.handleInput("password", e)}
                     />
                   </form>
-                  <div class="register_button">
+                  <div className="register_button">
                     <Button
-                      text="register" onClick={this.handleSubmit} /></div>
+                      text="register"
+                      onClick={this.handleSubmit}
+                    />
+                  </div>
 
                   <div className='login_link_container'>
-                    <Link to="/Login" className="login_link">Already Have an Account?<br /> <span className='register_now_span'>  Login Here</span>
+                    <Link to="/Login" className="login_link">
+                      Already Have an Account?
+                      <br />
+
+                      <span className='register_now_span'>  Login Here</span>
                     </Link>
                   </div>
 
