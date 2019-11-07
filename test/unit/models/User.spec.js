@@ -35,7 +35,7 @@ describe('server/models/User', () => {
     )
   })
 
-  // context('indexes', () => {
-  //   ;['email', 'token'].forEach(checkUniqueIndex(user))
-  // })
+  context('indexes', () => {
+    ;['username'].forEach(checkUniqueIndex(user))
+  })
 })

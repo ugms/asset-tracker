@@ -36,4 +36,7 @@ describe('server/models/Asset', () => {
     )
   })
 
+  context('indexes', () => {
+    ;['serial_number'].forEach(checkUniqueIndex(user))
+  })
 })
