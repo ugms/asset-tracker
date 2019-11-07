@@ -10,13 +10,10 @@ function App() {
     <div className="App">
       <Router>
 
-
         <Route exact path="/New-Item-Form" exact component={NewItemForm} />
 
-
       </Router>
-    </div >
-
+    </div>
 
   );
 }
