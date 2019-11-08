@@ -36,13 +36,14 @@ class Login extends Component {
   };
 
   render() {
+    console.log('Working')
     return (
       <div>
 
         <div>
 
-          <div class="blackbg"></div>
-          <div class="orangebg">
+          <div className="blackbg"></div>
+          <div className="orangebg">
             <img src="https://i.ibb.co/0GR3kX3/upwardlyglobal.png"
               className="logo"
             /></div>
@@ -70,11 +71,16 @@ class Login extends Component {
                       onKeyUp={e => this.handleInput("password", e)}
                     />
                   </form>
-                  <div class="loginbutton">
-                    <Button text="LOGIN" onClick={this.handleSubmit} /></div>
+                  <div className="loginbutton">
+                    <Button type='submit ' text="LOGIN" onClick={this.handleSubmit} />
+                  </div>
 
-                  <div className='signup_link_container'>
-                    <Link to="/signup" className="signup_link">Don't have an account?<br /> <span className='register_now_span'>  Register Now</span>
+                  <div className='register_link_container'>
+                    <Link to="/Register" className="register_link">
+                      Don't have an account?
+                      <br />
+
+                      <span className='register_now_span'>  Register Now</span>
                     </Link>
                   </div>
 
