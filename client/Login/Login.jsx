@@ -1,21 +1,6 @@
 import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import "./Login.scss";
-import { Link } from "react-router-dom";
-
-// const Input = props => (
-//   <input
-//     className="c-input"
-//     type={props.type}
-//     placeholder={props.placeholder}
-//     onKeyUp={props.onKeyUp}
-//   />
-// );
-
-// const Button = props => (
-//   <button className="c-button" onClick={props.onClick}>
-//     {props.text}
-//   </button>
-// );
 
 class Login extends Component {
   constructor(props) {
@@ -23,9 +8,8 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
+      userLoggedIn: false,
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -34,7 +18,6 @@ class Login extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const data = { username: this.state.username, password: this.state.password };
     const { username, password } = this.state
     const data = { username, password }
     console.log(data)
@@ -44,7 +27,8 @@ class Login extends Component {
       body: JSON.stringify(data),
     }).then((res) => {
       const response = res.json()
-      console.log(response)
+      console.log(response, "Testing")
+      this.setState({ userLoggedIn: true })
     }).catch((err) => {
       console.log(err)
     })
@@ -52,9 +36,11 @@ class Login extends Component {
 
 
   render() {
-    const { username, password } = this.state
+    const { username, password, userLoggedIn } = this.state
     return (
       <div>
+        {userLoggedIn && <Redirect to="/Dashboard" />}
+
 
         <div>
 

@@ -11,7 +11,6 @@ class Register extends Component {
       password: '',
       userCreated: false,
     };
-
   }
 
   componentDidMount() {
@@ -20,7 +19,6 @@ class Register extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const data = { username: this.state.username, password: this.state.password };
     const { username, password } = this.state
     const data = { username, password }
     console.log(data)
@@ -37,7 +35,6 @@ class Register extends Component {
     })
 
   }
-
 
   render() {
 
