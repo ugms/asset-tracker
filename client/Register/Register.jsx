@@ -1,22 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./Register.scss";
 
-
-// const Input = props => (
-//   <input
-//     className="c-input"
-//     type={props.type}
-//     placeholder={props.placeholder}
-//     onKeyUp={props.onKeyUp}
-//   />
-// );
-
-// const Button = props => (
-//   <button className="c-button" onClick={props.onClick}>
-//     {props.text}
-//   </button>
-// );
 
 class Register extends Component {
   constructor(props) {
@@ -24,9 +9,9 @@ class Register extends Component {
     this.state = {
       username: '',
       password: '',
+      userCreated: false,
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -45,17 +30,22 @@ class Register extends Component {
       body: JSON.stringify(data),
     }).then((res) => {
       const response = res.json()
-      console.log(response)
+      console.log(response, "IM here")
+      this.setState({ userCreated: true })
     }).catch((err) => {
       console.log(err)
     })
+
   }
 
 
   render() {
-    const { username, password } = this.state
+
+    const { username, password, userCreated } = this.state
     return (
+
       <div>
+        {userCreated && <Redirect to="/Dashboard" />}
 
         <div>
 
