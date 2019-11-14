@@ -19,7 +19,7 @@ class Navbar extends Component {
         <div className='navbar'>
           {/* Home Logo (back to Dashboard) */}
           <Link className='navbar__home_logo' to='/Dashboard'>
-            <img alt='home logo' src={logo}></img>
+            <img alt='home logo' src={logo} />
           </Link>
           {/* Name of Page */}
           <h2 className='navbar__heading'>{navHeading}</h2>
