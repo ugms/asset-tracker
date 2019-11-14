@@ -20,17 +20,23 @@ if (result) {
 }
 
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
-console.log(`DATABASE: ${process.env.DATABASE_URL}`);
+console.log(`DATABASE: ${process.env.DATABASE}`);
+console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
 
 const sequelize = new Sequelize(
-  process.env.DATABASE_URL,
+  process.env.DATABASE,
   process.env.DATABASE_USER,
   process.env.DATABASE_PASSWORD,
   {
     dialect: "postgres",
     dialectOptions: {
       ssl: process.env.NODE_ENV === "production"
-    }
+    },
+    host:
+      process.env.NODE_ENV === "production"
+        ? process.env.DATABASE_URL
+        : "localhost",
+    ssl: process.env.NODE_ENV === "production"
   }
 );
 const models = {
