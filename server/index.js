@@ -29,6 +29,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   },
   ssl: process.env.NODE_ENV === "production"
 });
+
 const models = {
   User: sequelize.import("./models/user"),
   Asset: sequelize.import("./models/asset")
