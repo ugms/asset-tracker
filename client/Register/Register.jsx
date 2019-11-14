@@ -1,44 +1,48 @@
 import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import "./Register.scss";
-import { Link } from "react-router-dom";
 
-const Input = props => (
-  <input
-    className="c-input"
-    type={props.type}
-    placeholder={props.placeholder}
-    onKeyUp={props.onKeyUp}
-  />
-);
-
-const Button = props => (
-  <button className="c-button" onClick={props.onClick}>
-    {props.text}
-  </button>
-);
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: { value: "" },
-      email: { value: "" },
-      password: { value: "" }
+      username: '',
+      password: '',
+      userCreated: false,
     };
   }
 
-  handleInput(param, e) {
-    const { value } = e.target;
+  componentDidMount() {
+    console.log('I was triggered during componentDidMount')
+  }
 
-    console.log(param);
+  handleSubmit(e) {
+    e.preventDefault();
+    const { username, password } = this.state
+    const data = { username, password }
+    console.log(data)
+    fetch('/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      const response = res.json()
+      console.log(response, "IM here")
+      this.setState({ userCreated: true })
+    }).catch((err) => {
+      console.log(err)
+    })
 
-    if (param === "name") {
-    }
-  };
+  }
 
   render() {
+
+    const { username, password, userCreated } = this.state
     return (
+
       <div>
+        {userCreated && <Redirect to="/Dashboard" />}
 
         <div>
 
@@ -60,33 +64,37 @@ class Register extends Component {
                   <h2>register</h2>
                 </div>
                 <div className="card-body">
-                  <form className="form">
+                  <div className="form">
 
-                    <Input
+                    <input
+                      className="c-input"
                       type="text"
-                      placeholder="NAME"
-                      value={this.state.name.value}
-                      onKeyUp={e => this.handleInput("name", e)}
+                      placeholder="USERNAME"
+                      value={username}
+                      onChange={e => this.setState({ username: e.target.value })}
                     />
 
-                    <Input
-                      type="text"
-                      placeholder="EMAIL"
-                      value={this.state.email.value}
-                      onKeyUp={e => this.handleInput("email", e)}
-                    />
-                    <Input
+                    <input
+                      className="c-input"
                       type="password"
                       placeholder="PASSWORD"
-                      value={this.state.password.value}
-                      onKeyUp={e => this.handleInput("password", e)}
+                      value={password}
+                      onChange={e => this.setState({ password: e.target.value })}
                     />
-                  </form>
+
+                  </div>
                   <div className="register_button">
-                    <Button
-                      text="register"
-                      onClick={this.handleSubmit}
-                    />
+
+                    <button
+                      label="Button"
+                      type="button"
+                      className="c-button"
+                      text="Register"
+                      onClick={(e) => this.handleSubmit(e)}
+                    >
+                      Register
+                    </button>
+
                   </div>
 
                   <div className='login_link_container'>
