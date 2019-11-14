@@ -1,10 +1,6 @@
 // Page Background Styles
 body{
-<<<<<<< HEAD
-  background:#f9fbfd;
-=======
   background:white
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
 }
 
 .blackbg{
@@ -44,12 +40,8 @@ img.logo{
   height:120px;
 }
 
-<<<<<<< HEAD
-// Login Card Styles
-=======
 // register Card Styles
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
-#login{
+#register{
   padding-top: 285px;
   padding-bottom: 20px;
   z-index: 6;
@@ -62,7 +54,7 @@ img.logo{
   align-items: baseline;
 }
 
-#login .card{
+#register .card{
   background-color:#fff;
   border-radius:25px;
   box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
@@ -71,7 +63,7 @@ img.logo{
 }
 
 // Card Title Styles
-#login .card .card-title{
+#register .card .card-title{
   padding: 2rem 1.2rem 0;
   margin-bottom:0;
   text-align:center;
@@ -79,7 +71,7 @@ img.logo{
   position: relative;
 }
 
-#login .card .card-title h2{
+#register .card .card-title h2{
   color:#333333;
   position:relative;
   font-size:1.2rem;
@@ -90,11 +82,7 @@ img.logo{
 }
 
 // Title Underline
-<<<<<<< HEAD
-#login .card .card-title h2:after{
-=======
 #register .card .card-title h2:after{
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   position:absolute;
   content:'';
   bottom:-10px;
@@ -127,14 +115,6 @@ img.logo{
     border: 1px solid grey;
     border-radius: 8px;
   }
-<<<<<<< HEAD
-  
-  // Button Styles
-.c-button {
-    width: 100%;
-    height:45px;
-    padding: 10px 10px;
-=======
 
   .c-input:hover {
     background-color:#e8e8e8;
@@ -144,7 +124,6 @@ img.logo{
 .c-button {
     width: 150px;
     height:45px;
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
     font-size: 15px;
     font-weight: 500;
     color: #fff;
@@ -157,42 +136,22 @@ img.logo{
   }
   .c-button:hover{
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
-<<<<<<< HEAD
-  }
-
-  .loginbutton {
-    padding-bottom: 20px;
-    padding-left: 90px;
-    padding-right: 85px;
-    padding-bottom: 40px;
-=======
     transform: scale(.95)
   }
 
-  .login_button {
+  .register_button {
     padding-bottom: 35px;
     padding-left: 90px;
     padding-right: 85px;
     padding-top:-15px;
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   }
 
 
   // Registration Link Styles
-
-  .navbar__link {
+  a:link {
     text-decoration: none;
     color: #000;
     text-align: center;
-  }
-
-
-  a:link {
-    // text-decoration: none;
-    // color: #000;
-    // padding-top: 25px;
-    // padding-left: 25px;
-    // text-align: center;
   }
   
   a:visited {
@@ -212,27 +171,15 @@ img.logo{
     text-align: center;
   }
 
-<<<<<<< HEAD
-.signup_link_container{
-=======
-.registration_link_container{
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
+.login_link_container{
 
   transform: translate(0px,-25px);
 }
 
-<<<<<<< HEAD
-a.signup_link{
+a.login_link{
   font-size: 13px;
 }
 
 .register_now_span {
-=======
-a.register_link{
-  font-size: 13px;
-}
-
-.login_span {
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   font-weight: bold;
 }

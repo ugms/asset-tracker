@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import logo from './home.svg'
 import './Navbar.scss'
 
@@ -16,11 +15,11 @@ class Navbar extends Component {
     const navHeading = navName.split('-').join('  ')
 
     return (
-      <div >
+      <div>
         <div className='navbar'>
           {/* Home Logo (back to Dashboard) */}
           <Link className='navbar__home_logo' to='/Dashboard'>
-            <img src={logo}></img>
+            <img alt='home logo' src={logo} />
           </Link>
           {/* Name of Page */}
           <h2 className='navbar__heading'>{navHeading}</h2>

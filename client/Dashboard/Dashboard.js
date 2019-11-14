@@ -5,7 +5,7 @@ import ItemRow from './ItemRow'
 import logo from './reporting.png'
 import logo1 from './laptop.svg'
 import logo2 from './tablet.svg'
-import Navbar from '../NavBar/NavBar'
+import Navbar from '../Navbar/Navbar'
 class Dashboard extends Component {
   constructor(props) {
     super(props)
