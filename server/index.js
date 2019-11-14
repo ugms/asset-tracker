@@ -27,7 +27,10 @@ const sequelize = new Sequelize(
   process.env.DATABASE_USER,
   process.env.DATABASE_PASSWORD,
   {
-    dialect: "postgres"
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: process.env.NODE_ENV === "production"
+    }
   }
 );
 const models = {
