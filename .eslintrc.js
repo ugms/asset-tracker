@@ -17,8 +17,13 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  plugins: ["react"],
+  plugins: ["react", "only-warn"],
   rules: {
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": "off",
+    "import/order": "warn",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "warn",
+    "react/no-unescaped-entities": "warn"
   }
 };
