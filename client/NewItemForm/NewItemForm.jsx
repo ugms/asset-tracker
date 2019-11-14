@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './NewItemForm.scss'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar.jsx'
 
 class NewItemForm extends Component {
   constructor(props) {
