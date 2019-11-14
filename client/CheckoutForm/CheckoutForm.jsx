@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navbar from '../Navbar/Navbar.jsx'
 import './CheckoutForm.scss'
 
 class CheckoutForm extends Component {
@@ -19,10 +20,7 @@ class CheckoutForm extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <Navbar />
-=======
->>>>>>> a165984af9c14d0a8c5e591c882ac60128c6e26d
         <div className='checkout_form_container'>
           <div className='checkout_square'>
             <h1 className='checkout_title'>Checkout Form</h1>
@@ -64,7 +62,8 @@ class CheckoutForm extends Component {
                 value=''
                 placeholder='Duration of Checkout' />
 
-              {/* Date Field */} {/* TODO - make dropdown calendar */}
+              {/* Date Field */}
+              {/* TODO - make dropdown calendar */}
               <input
                 className='checkout_input_field'
                 type='type'

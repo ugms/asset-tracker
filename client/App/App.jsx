@@ -3,6 +3,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import Login from "../Login/Login.jsx";
 import Register from '../Register/Register.jsx'
 import Dashboard from '../Dashboard/Dashboard.jsx'
+import CheckoutForm from '../CheckoutForm/CheckoutForm.jsx'
 import InventoryOverview from '../InventoryOverview/InventoryOverview.jsx'
 
 import "./App.css";
