@@ -19,11 +19,16 @@ if (result) {
   console.log("Node.js running in development mode");
 }
 
+<<<<<<< HEAD
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`)
 console.log(`DATABASE: ${process.env.DATABASE}`)
+=======
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`DATABASE: ${process.env.DATABASE_URL}`);
+>>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
 
 const sequelize = new Sequelize(
-  process.env.DATABASE,
+  process.env.DATABASE_URL,
   process.env.DATABASE_USER,
   process.env.DATABASE_PASSWORD,
   {
