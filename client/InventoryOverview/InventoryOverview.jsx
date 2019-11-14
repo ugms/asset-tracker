@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar.jsx'
 import './InventoryOverview.scss'
 import AssetRow from './AssetRow.jsx'
 

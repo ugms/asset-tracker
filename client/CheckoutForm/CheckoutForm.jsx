@@ -19,7 +19,10 @@ class CheckoutForm extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
         <Navbar />
+=======
+>>>>>>> a165984af9c14d0a8c5e591c882ac60128c6e26d
         <div className='checkout_form_container'>
           <div className='checkout_square'>
             <h1 className='checkout_title'>Checkout Form</h1>
