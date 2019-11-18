@@ -11,6 +11,7 @@ import Sequelize from "sequelize";
 
 // const passport = require('passport');
 import passport from "passport";
+import passportJWT from "passportJWT";
 import userController from "./controllers/users";
 import assetController from "./controllers/assets";
 
@@ -39,9 +40,7 @@ Object.keys(models).forEach(key => {
     models[key].associate(models);
   }
 });
-const { Strategy } = require("passport-local");
-// import { strategy, LocalStrategy } from 'passport-local'
-// const db = require('./db'); // placeholder
+
 
 // set our express options
 const app = express();
@@ -56,67 +55,67 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// Passport.initalize middleware
-// app.configure(function() {
-//   app.use(express.static('public'));
-//   app.use(express.cookieParser());
-//   app.use(express.bodyParser());
-//   app.use(express.session({ secret: 'keyboard cat' }));
-//   app.use(passport.initialize());
-//   app.use(passport.session());
-//   app.use(app.router);
-// });
 
-// Local Authentication
-passport.use(
-  new Strategy(function (username, password, done) {
-    models.User.findOne({ username }, function (err, user) {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false);
-      }
-      if (!user.verifyPassword(password)) {
-        return done(null, false);
-      }
-      return done(null, user);
-    });
-  })
-);
+// JWT Authentication
 
-// placeholder route
-app.get("/", (req, res) => {
-  res.sendFile(HTML_FILE);
+// JWT Extraction
+let ExtractJwt = passportJWT.ExtractJWT;
+
+// Declare Passport Strategy
+let JWTStrategy = passportJWT.Strategy;
+let jwtOptions = {};
+
+jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey = "samplesecret"
+
+// Helper Function (For Authentication)
+const getUser = async obj => {
+  return await User.findOne({
+  where: obj,
+  });
+};
+
+// Create Strategy
+let strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
+  console.log("payload received", jwt_payload);
+  let user = getUser({ id: jwt_payload.id });
+  if (user) {
+    next(null, user);
+  } else {
+    next(null, false);
+  }
+});
+passport.use(strategy);
+
+app.use(passport.initalize());
+
+// Test login route
+app.post("/auth-login", async function(req, res, next) {
+  const { username, password } = req.body;
+  if (username && password) {
+    // we get the user with the name and save the resolved promise
+    returned
+    let user = await getUser({ username });
+    if (!user) {
+      res.status(401).json({ msg: "No such user found", user });
+    }
+   if (user.password === password) {
+      // from now on we’ll identify the user by the id and the id is
+      // the only personalized value that goes into our token
+      let payload = { id: user.id };
+      let token = jwt.sign(payload, jwtOptions.secretOrKey);
+      res.json({ msg: ‘ok’, token: token });
+    } else {
+      res.status(401).json({ msg: "Password is incorrect" });
+    }
+  }
 });
 
-// placeholder: login
-app.post(
-  "/login",
-  passport.authenticate("local", { failureRedirect: "/login" }),
-  function (req, res) {
-    res.redirect("/");
-  }
-);
+
 
 userController(app, models);
 assetController(app, models);
 
-// app.get('/squirell', (req, res) => {
-//   console.log("We are here")
-//   res.send("hello world")
-// })
-// app.post('/register',
-//   // passport.authenticate('local', { failureRedirect: '/login' }),
-//
-//   function(req, res) {
-//     User.create(req.body).then(user => {
-//       // you can now access the newly created task via the variable task
-//       return user
-//     }).catch(err => ({
-//       // console.log("error: ", err)
-//     });
-// });
 
 // face the world
 const hotPort = app.get("port");
