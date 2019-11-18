@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
+const jwt = require("jsonwebtoken");
 
 // SQL / db
 import Sequelize from "sequelize";
@@ -12,6 +13,7 @@ import Sequelize from "sequelize";
 // const passport = require('passport');
 import passport from "passport";
 import passportJWT from "passportJWT";
+
 import userController from "./controllers/users";
 import assetController from "./controllers/assets";
 
@@ -109,6 +111,11 @@ app.post("/auth-login", async function(req, res, next) {
       res.status(401).json({ msg: "Password is incorrect" });
     }
   }
+});
+
+// Sample Protected Route
+app.get("/protected", passport.authenicate("jwt", {session: false}), function(req, res) {
+  res.json({msg: "Success, you are seeing this because you are authorized"});
 });
 
 
