@@ -4,7 +4,7 @@ node_js:
 services:
   - postgresql
 before_script:
-  - createdb ugms-test -U postgres
+  - createdb ugms -U postgres
 install:
   - npm install
   - npm run build
