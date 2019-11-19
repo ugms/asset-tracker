@@ -4,8 +4,13 @@ import subprocess
 def install_postgres():
     print("Installing PostgreSQL...")
     try:
+        print("Updating Brew...")
         brewupdate = subprocess.Popen(['brew', 'update'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        stdout, stderr = brewupdate.communicate()
+        print("Installing postgresql package...")
         brewinstall = subprocess.Popen(['brew', 'install', 'postgresql'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        stdout, stderr = brewinstall.communicate()
+        print("PostgreSQL successfully installed! ✅\n")
     except Exception as e:
         print(f'Error during installation: {e}')
         raise Exception(e)
@@ -15,9 +20,32 @@ def install_postgres():
     except Exception as e:
         print(f'Error during database initiation: {e}')
         raise Exception(e)
+    stdout, stderr = dbinit.communicate()
+    print("Database initiated")
+    print("Creating default (username) database")
+    try:
+        dbinit = subprocess.Popen(['createdb'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    except Exception as e:
+        print(f'Error during database initiation: {e}')
+        raise Exception(e)
+    stdout, stderr = dbinit.communicate()
+    print("Default (username) database created")
     return
 
-def create_database():
+def check_homebrew():
+    # check if Homebrew is installed
+    print("Checking if Homebrew is installed...")
+    try:
+        brew_status = subprocess.Popen(['brew', '--version'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    except OSError as err:
+        print(f'OS Error: {err}')
+        print("Check to make sure Homebrew is installed properly. Get Homebrew at https://brew.sh/")
+        return False
+    stdout, stderr = brew_status.communicate()
+    print(stdout.decode('UTF-8'))
+    return True
+
+def check_database():
     # check if Postgres is running
     try:
         db_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'status'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -29,12 +57,17 @@ def create_database():
     # if no server running
     if '(PID:' not in stdout.decode('UTF-8'):
         try:
-            startdb_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'start'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'start'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            print("Postgres server started ✅")
         except Exception as e:
             print(f'Error starting PostgreSQL: {e}')
             raise Exception(e)
-        stdout, stderr = startdb_status.communicate()
-        print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+        # stdout, stderr = startdb_status.communicate()
+        # print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+        return True
+    return False
+
+def create_database():
     # check if ugms database exists
     try:
         db_exists = subprocess.Popen(['psql', '-lqt'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -51,34 +84,31 @@ def create_database():
             raise Exception(e)
         stdout, stderr = createdb_status.communicate()
         print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+    else:
+        print("ugms database present! ✅\n")
     return
 
-def setup():
-    # check if Homebrew is installed
-    print("Checking if Homebrew is installed...")
-    try:
-        brew_status = subprocess.Popen(['brew', '--version'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    except OSError as err:
-        print(f'OS Error: {err}')
-        print("Check to make sure Homebrew is installed properly. Get Homebrew at https://brew.sh/")
-        return
-    stdout, stderr = brew_status.communicate()
-    print(stdout.decode('UTF-8'))
-    
+def check_postgres():
     # check if PostgreSQL is installed
     print("Checking PostgreSQL installation...")
     try:
         psql_install = subprocess.Popen(['postgres', '--version'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except OSError: # no installation found
         print("No PostgreSQL installation found.")
-        install_postgres()
+        return False
     stdout, stderr = psql_install.communicate()
-    print(stdout.decode('UTF-8'))
+    print(stdout.decode('UTF-8') + 'PostgreSQL installed ✅')
+    return True
 
-    # create UGMS database
-    print("Starting PostgreSQL and creating database 'ugms'")
-    create_database()
-    
+def setup():
+    if not check_postgres():
+        if not check_homebrew():
+            return
+        install_postgres()
+    if not check_database():
+        # create UGMS database
+        print("Starting PostgreSQL and creating database 'ugms' \n")
+        create_database()
     # install NPM packages
     print("Checking NPM packages...")
     try:
