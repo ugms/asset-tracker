@@ -31,7 +31,8 @@ class CheckoutForm extends Component {
                 className='checkout_input_field'
                 type='text'
                 value=''
-                placeholder='Name' />
+                placeholder='Name'
+              />
 
               {/* Company ID Field */}
               <input
@@ -46,36 +47,46 @@ class CheckoutForm extends Component {
                 className='checkout_input_field'
                 type='text'
                 value=''
-                placeholder='Email Address' />
+                placeholder='Email Address'
+              />
 
               {/* Phone Number Field  */}
               <input
                 className='checkout_input_field'
                 type='text'
                 value=''
-                placeholder='Phone Number' />
+                placeholder='Phone Number'
+              />
 
               {/* Duration of Checkout Field */}
               <input
                 className='checkout_input_field'
                 type='text'
                 value=''
-                placeholder='Duration of Checkout' />
+                placeholder='Duration of Checkout'
+              />
 
+<<<<<<< HEAD
               {/* Date Field */}
+=======
+              {/* Date Field */} 
+              {' '}
+>>>>>>> 502f2ac932a451e5b7fb811081a1a1795a6502a7
               {/* TODO - make dropdown calendar */}
               <input
                 className='checkout_input_field'
                 type='type'
                 value=''
-                placeholder='Date' />
+                placeholder='Date'
+              />
 
               {/* Reason for Checkout Field */}
               <input
                 className='checkout_input_field'
                 type='text'
                 value=''
-                placeholder='Reason for Checkout' />
+                placeholder='Reason for Checkout'
+              />
 
             </form>
 
