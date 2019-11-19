@@ -1,0 +1,28 @@
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #50aef4;
+  height: 10vh;
+  width: 100%;
+}
+
+.navbar__heading {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 1.8em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+a:link {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=NavBar.css.map */

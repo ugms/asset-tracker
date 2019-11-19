@@ -1,0 +1,181 @@
+// Page Background Styles
+body {
+  background: white;
+}
+
+.blackbg {
+  width: 100%;
+  height: 180px;
+  background: #333333;
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+}
+
+.orangebg {
+  width: 100%;
+  height: 400px;
+  background: #f26522;
+  z-index: 1;
+  position: absolute;
+}
+
+// Logo Styles
+.logo {
+  padding-left: -10px;
+}
+
+.img-holder {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img.logo {
+  display: block;
+  margin-left: 110px;
+  margin-top: 110px;
+  margin-bottom: 20px;
+  height: 120px;
+}
+
+// register Card Styles
+#register {
+  padding-top: 285px;
+  padding-bottom: 20px;
+  z-index: 6;
+  position: absolute;
+  width: 300px;
+  left: calc(50% - 150px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#register .card {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  z-index: 3;
+  position: relative;
+}
+
+// Card Title Styles
+#register .card .card-title {
+  padding: 2rem 1.2rem 0;
+  margin-bottom: 0;
+  text-align: center;
+  z-index: 3;
+  position: relative;
+}
+
+#register .card .card-title h2 {
+  color: #333333;
+  position: relative;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+// Title Underline
+#register .card .card-title h2:after {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 50px;
+  background: #21253d;
+}
+
+// Form Styles
+.form {
+  background: #fff;
+  border-radius: 25px;
+  padding: 20px 30px;
+  padding-left: 40px;
+  padding-right: 60px;
+  margin-top: 10px;
+}
+
+.c-input {
+  text-align: center;
+  width: 100%;
+  height: 26px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.c-input:hover {
+  background-color: #e8e8e8;
+}
+
+// Button Styles
+.c-button {
+  width: 150px;
+  height: 45px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #f26522;
+  cursor: pointer;
+}
+.c-button:hover {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  transform: scale(0.95);
+}
+
+.register_button {
+  padding-bottom: 35px;
+  padding-left: 90px;
+  padding-right: 85px;
+  padding-top: -15px;
+}
+
+// Registration Link Styles
+a:link {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(85, 85, 85);
+  text-align: center;
+}
+
+a:active {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.login_link_container {
+  transform: translate(0px, -25px);
+}
+
+a.login_link {
+  font-size: 13px;
+}
+
+.register_now_span {
+  font-weight: bold;
+}

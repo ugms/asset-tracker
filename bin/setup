@@ -4,30 +4,54 @@ import subprocess
 def install_postgres():
     print("Installing PostgreSQL...")
     try:
-        subprocess.Popen(['brew', 'update'])
-        subprocess.Popen(['brew', 'install', 'postgresql'])
+        brewupdate = subprocess.Popen(['brew', 'update'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        brewinstall = subprocess.Popen(['brew', 'install', 'postgresql'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except Exception as e:
         print(f'Error during installation: {e}')
         raise Exception(e)
     print("Initiating database")
     try:
-        subprocess.Popen(['initdb', '/usr/local/var/postgres'])
+        dbinit = subprocess.Popen(['initdb', '/usr/local/var/postgres'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except Exception as e:
         print(f'Error during database initiation: {e}')
         raise Exception(e)
-    print("Starting PostgreSQL and creating database 'ugms'")
+    return
+
+def create_database():
+    # check if Postgres is running
     try:
-        subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'start'])
+        db_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'status'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except Exception as e:
         print(f'Error starting PostgreSQL: {e}')
         raise Exception(e)
+    stdout, stderr = db_status.communicate()
+    print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+    # if no server running
+    if '(PID:' not in stdout.decode('UTF-8'):
+        try:
+            startdb_status = subprocess.Popen(['pg_ctl', '-D', '/usr/local/var/postgres', 'start'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        except Exception as e:
+            print(f'Error starting PostgreSQL: {e}')
+            raise Exception(e)
+        stdout, stderr = startdb_status.communicate()
+        print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+    # check if ugms database exists
     try:
-        subprocess.Popen(['createdb', 'ugms'])
+        db_exists = subprocess.Popen(['psql', '-lqt'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     except Exception as e:
-        print(f'Error creating database ugms: {e}')
+        print(f'Error starting PostgreSQL: {e}')
         raise Exception(e)
+    stdout, stderr = db_exists.communicate()
+    print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
+    if 'ugms' not in stdout.decode('UTF-8'):
+        try:
+            createdb_status = subprocess.Popen(['createdb', 'ugms'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        except Exception as e:
+            print(f'Error creating database ugms: {e}')
+            raise Exception(e)
+        stdout, stderr = createdb_status.communicate()
+        print(stdout.decode('UTF-8') if stdout is not None else "No stdout")
     return
-
 
 def setup():
     # check if Homebrew is installed
@@ -50,6 +74,10 @@ def setup():
         install_postgres()
     stdout, stderr = psql_install.communicate()
     print(stdout.decode('UTF-8'))
+
+    # create UGMS database
+    print("Starting PostgreSQL and creating database 'ugms'")
+    create_database()
     
     # install NPM packages
     print("Checking NPM packages...")

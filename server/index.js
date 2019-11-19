@@ -1,25 +1,128 @@
-'use strict'
+// environment setup
+import dotenv from "dotenv";
 
 // dependencies
-import express from 'express'
-import path from 'path'
+import express from "express";
+import path from "path";
+import bodyParser from "body-parser";
+
+// SQL / db
+import Sequelize from "sequelize";
+
+// const passport = require('passport');
+import passport from "passport";
+import userController from "./controllers/users";
+import assetController from "./controllers/assets";
+
+const result = process.env.NODE_ENV === "development" ? dotenv.config() : false;
+if (result) {
+  console.log("Node.js running in development mode");
+}
+
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: process.env.NODE_ENV === "production"
+  },
+  ssl: process.env.NODE_ENV === "production"
+});
+
+const models = {
+  User: sequelize.import("./models/user"),
+  Asset: sequelize.import("./models/asset")
+};
+Object.keys(models).forEach(key => {
+  if ("associate" in models[key]) {
+    models[key].associate(models);
+  }
+});
+const { Strategy } = require("passport-local");
+// import { strategy, LocalStrategy } from 'passport-local'
+// const db = require('./db'); // placeholder
 
 // set our express options
 const app = express();
-app.set('port', process.env.PORT || 3000);
-const REACT_DIR = path.join(__dirname, '../client'); // NEW
-const HTML_FILE = path.join(REACT_DIR, 'index.html'); // NEW
-app.use(express.static(REACT_DIR)); // NEW
+app.set("port", process.env.PORT || 3000);
+const REACT_DIR = path.join(__dirname, "../client");
+const HTML_FILE = path.join(REACT_DIR, "index.html");
+app.use(express.static(REACT_DIR));
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+app.use(bodyParser.json());
+
+// Passport.initalize middleware
+// app.configure(function() {
+//   app.use(express.static('public'));
+//   app.use(express.cookieParser());
+//   app.use(express.bodyParser());
+//   app.use(express.session({ secret: 'keyboard cat' }));
+//   app.use(passport.initialize());
+//   app.use(passport.session());
+//   app.use(app.router);
+// });
+
+// Local Authentication
+passport.use(
+  new Strategy(function(username, password, done) {
+    models.User.findOne({ username }, function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false);
+      }
+      if (!user.verifyPassword(password)) {
+        return done(null, false);
+      }
+      return done(null, user);
+    });
+  })
+);
 
 // placeholder route
-app.get('/', (req, res) => {
- res.sendFile(HTML_FILE); // EDIT
+app.get("/", (req, res) => {
+  res.sendFile(HTML_FILE);
 });
 
+// placeholder: login
+app.post(
+  "/login",
+  passport.authenticate("local", { failureRedirect: "/login" }),
+  function(req, res) {
+    res.redirect("/");
+  }
+);
+
+userController(app, models);
+assetController(app, models);
+
+// app.get('/squirell', (req, res) => {
+//   console.log("We are here")
+//   res.send("hello world")
+// })
+// app.post('/register',
+//   // passport.authenticate('local', { failureRedirect: '/login' }),
+//
+//   function(req, res) {
+//     User.create(req.body).then(user => {
+//       // you can now access the newly created task via the variable task
+//       return user
+//     }).catch(err => ({
+//       // console.log("error: ", err)
+//     });
+// });
+
 // face the world
-const hotPort = app.get('port');
+const hotPort = app.get("port");
 const server = app.listen(hotPort, () => {
-    console.log(`App listening on port ${hotPort}!`)
+  console.log(`Asset-tracker listening on port ${hotPort}!`);
+  sequelize.sync();
 });
 
 // for Mocha/Chai test purposes
