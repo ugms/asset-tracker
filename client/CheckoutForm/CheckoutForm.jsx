@@ -66,12 +66,8 @@ class CheckoutForm extends Component {
                 placeholder='Duration of Checkout'
               />
 
-<<<<<<< HEAD
-              {/* Date Field */}
-=======
               {/* Date Field */} 
               {' '}
->>>>>>> 502f2ac932a451e5b7fb811081a1a1795a6502a7
               {/* TODO - make dropdown calendar */}
               <input
                 className='checkout_input_field'
