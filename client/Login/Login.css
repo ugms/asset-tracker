@@ -1,5 +1,5 @@
 body {
-  background: #f9fbfd;
+  background: white;
 }
 
 .blackbg {
@@ -87,7 +87,7 @@ img.logo {
   margin-bottom: 20px;
 }
 
-#login .card .card-title h2:after {
+#register .card .card-title h2:after {
   position: absolute;
   content: '';
   bottom: -10px;
@@ -122,9 +122,8 @@ img.logo {
 }
 
 .c-button {
-  width: 100%;
+  width: 150px;
   height: 45px;
-  padding: 10px 10px;
   font-size: 15px;
   font-weight: 500;
   color: #fff;
@@ -136,17 +135,17 @@ img.logo {
 }
 
 .c-button:hover {
-  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
-          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-.loginbutton {
-  padding-bottom: 20px;
+.login_button {
+  padding-bottom: 35px;
   padding-left: 90px;
   padding-right: 85px;
-  padding-bottom: 40px;
+  padding-top: -15px;
 }
 
 a:link {
@@ -172,7 +171,7 @@ a:active {
   text-align: center;
 }
 
-.register_link_container {
+.registration_link_container {
   -webkit-transform: translate(0px, -25px);
           transform: translate(0px, -25px);
 }
@@ -181,7 +180,7 @@ a.register_link {
   font-size: 13px;
 }
 
-.register_now_span {
+.login_span {
   font-weight: bold;
 }
 /*# sourceMappingURL=Login.css.map */
