@@ -72,7 +72,7 @@ jwtOptions.secretOrKey = "samplesecret"
 
 // Helper Function (For Authentication)
 const getUser = async obj => {
-  return await User.findOne({
+  return await db.User.findOne({
   where: obj,
   });
 };
