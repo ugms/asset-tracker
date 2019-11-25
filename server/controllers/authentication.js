@@ -22,7 +22,7 @@ export default function(app, db) {
         // the only personalized value that goes into our token
         let payload = { id: user.id };
         let token = jwt.sign(payload, jwtOptions.secretOrKey);
-        res.json({ msg: ‘ok’, token: token });
+        res.json({ msg: "ok", token: token });
       } else {
         res.status(401).json({ msg: "Password is incorrect" });
       }
