@@ -11,7 +11,8 @@ const jwt = require("jsonwebtoken");
 import Sequelize from "sequelize";
 
 // const passport = require('passport');
-import passport from "passport";
+// import passport from "passport";
+const passport = require("passport");
 import passportJWT from "passport-jwt";
 
 import userController from "./controllers/users";
@@ -62,11 +63,14 @@ app.use(bodyParser.json());
 // JWT Authentication
 
 // JWT Extraction
-let ExtractJwt = passportJWT.ExtractJWT;
+// let ExtractJwt = passportJWT.ExtractJWT;
 
 // Declare Passport Strategy
-let JWTStrategy = passportJWT.Strategy;
+// let JwtStrategy = passportJWT.Strategy;
 let jwtOptions = {};
+
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
 
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = "samplesecret"
@@ -83,7 +87,7 @@ let strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
 });
 passport.use(strategy);
 
-app.use(passport.initalize());
+app.use(passport.initialize());
 
 
 userController(app, models);
