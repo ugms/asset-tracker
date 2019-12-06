@@ -14,12 +14,13 @@ function App() {
       <Router>
 
         <Route path="/Login" exact component={Login} />
+
         <Route path="/Register" exact component={Register} />
+
 
         <Route exact path="/Dashboard" exact component={Dashboard} />
         <Route exact path="/Inventory-Overview" exact component={InventoryOverview} />
         <Route exact path="/Checkout-Form" exact component={CheckoutForm} />
-
 
 
       </Router>

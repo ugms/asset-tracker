@@ -19,6 +19,7 @@ if (result) {
   console.log("Node.js running in development mode");
 }
 
+
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
 
@@ -29,6 +30,11 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   },
   ssl: process.env.NODE_ENV === "production"
 });
+
+
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`DATABASE: ${process.env.DATABASE_URL}`);
+
 
 const models = {
   User: sequelize.import("./models/user"),
@@ -69,8 +75,8 @@ app.use(bodyParser.json());
 
 // Local Authentication
 passport.use(
-  new Strategy(function(username, password, done) {
-    models.User.findOne({ username }, function(err, user) {
+  new Strategy(function (username, password, done) {
+    models.User.findOne({ username }, function (err, user) {
       if (err) {
         return done(err);
       }
@@ -94,7 +100,7 @@ app.get("/", (req, res) => {
 app.post(
   "/login",
   passport.authenticate("local", { failureRedirect: "/login" }),
-  function(req, res) {
+  function (req, res) {
     res.redirect("/");
   }
 );
