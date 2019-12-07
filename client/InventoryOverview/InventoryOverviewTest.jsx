@@ -5,6 +5,7 @@ import './InventoryOverview.scss'
 // import AssetRow from './AssetRow.jsx'
 import Table from './Table.jsx'
 
+
 class InventoryOverviewTest extends Component {
   constructor(props) {
     super(props);

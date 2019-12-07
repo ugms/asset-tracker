@@ -5,6 +5,7 @@ import './InventoryOverview.scss'
 // import AssetRow from './AssetRow.jsx'
 // import Table from './Table.jsx'
 import AssetTable from './AssetTable.jsx'
+import AssetTable2 from './AssetTable2.jsx'
 
 class InventoryOverview extends Component {
   constructor(props) {
@@ -71,10 +72,14 @@ class InventoryOverview extends Component {
           </div>
 
           {/* ITEM TABLE */}
-          <div className='item_table_container'>
+          {/* <div className='item_table_container'>
             {this.state.assets.map((item) => {
               return <AssetTable key={item.id} assets={item} />
             })}
+          </div> */}
+
+          <div>
+            <AssetTable2 />
           </div>
 
         </div>

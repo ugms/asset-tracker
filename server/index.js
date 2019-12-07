@@ -19,13 +19,13 @@ if (result) {
   console.log("Node.js running in development mode");
 }
 
-<<<<<<< HEAD
+
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`)
 console.log(`DATABASE: ${process.env.DATABASE}`)
-=======
+
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+
 console.log(`DATABASE: ${process.env.DATABASE_URL}`);
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
 
 const sequelize = new Sequelize(
   process.env.DATABASE_URL,
@@ -35,6 +35,18 @@ const sequelize = new Sequelize(
     dialect: "postgres"
   }
 );
+=======
+console.log(`DATABASE_URL: ${process.env.DATABASE_URL}`);
+
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: process.env.NODE_ENV === "production"
+  },
+  ssl: process.env.NODE_ENV === "production"
+});
+
+>>>>>>> 502f2ac932a451e5b7fb811081a1a1795a6502a7
 const models = {
   User: sequelize.import("./models/user"),
   Asset: sequelize.import("./models/asset")
