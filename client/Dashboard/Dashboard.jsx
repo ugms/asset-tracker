@@ -43,7 +43,7 @@ class Dashboard extends Component {
 
           {/* Inventory Overview */}
           <div className='gray_square overview_sqaure'>
-            <h1 className='square_heading'>Inventory Overview</h1>
+            <h1 className='square_heading inventory_overview_heading'>Inventory Overview</h1>
             {/* Inventory Highlights */}
             <div className='inventory_inner_squares'>
               <div className='inventory_inner_square'>Office Supplies</div>
@@ -53,14 +53,14 @@ class Dashboard extends Component {
             <div className="dashboard_button">
               <Link className='dashboard_link'
                 to="/Inventory-Overview">
-                See All Items
+                See All  Items
             </Link>
             </div>
           </div>
 
           {/* Reporting */}
           <div className='gray_square reporting_square'>
-            <h1 className='square_heading'>Reporting</h1>
+            <h1 className='square_heading reporting_heading'>Reporting</h1>
 
             <img className='reporting_image' src={logo} />
 

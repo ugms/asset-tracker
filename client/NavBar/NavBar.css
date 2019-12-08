@@ -17,15 +17,11 @@
   font-size: 1.8em;
   font-weight: 400;
   text-transform: uppercase;
-<<<<<<< HEAD
-  margin-top: 35px;
-=======
   margin-top: 30px;
->>>>>>> 502f2ac932a451e5b7fb811081a1a1795a6502a7
   margin-left: 20px;
 }
 
-a:link {
+a.navbar__home_logo {
   margin-left: 15px;
   margin-top: 20px;
 }

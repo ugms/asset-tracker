@@ -9,7 +9,8 @@
   width: 25vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  // justify-content: center;
   align-items: center;
   border-radius:5px;
   background-color:#E5E5E5;
@@ -33,9 +34,9 @@
 }
 
 .inner_square {
-  height:10vh;
+  height:8vh;
   width:15vw;
-  margin:5px;
+  margin:1vh;
   background-color:rgb(178,219,250);
   display: flexbox;
   justify-content: center;
@@ -45,10 +46,11 @@
 
 .square_heading {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
+  // font-size: 1.5em;
+  font-size:2.5vh;
   font-weight:400;
+  margin-top:3vh;
   text-transform: uppercase;
-  margin-top:15px;
 }
 
 .square_heading2{
@@ -69,22 +71,23 @@
 }
 
 .reporting_square {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .reporting_image {
-  height:150px;
-  width:200px;
+  height:20vh;
+  width:15vw;
   margin:5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-a.dashboard_link{
+a.dashboard_link {
   text-decoration:none;
   color: white;
+  font-size:1vw;
   text-transform: capitalize;
   text-align: center; 
 }
@@ -94,12 +97,15 @@ a.dashboard_link:visited {
 }
 
 .dashboard_button {
-  margin:5px;
-  height:40px;
-  width:100px;
+  height:6vh;
+  width:8vw;
+  margin-bottom:2vh;
   border-radius: 5px;
   background-color: #50AEF4;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inventory_inner_squares {
@@ -113,22 +119,23 @@ a.dashboard_link:visited {
  @include center_flex();
   background-color: white;
   border-radius: 3px;
-  height:4.5vh;
+  font-size: 1.5vh;
+  height:5vh;
   width: 15vw;
   margin:5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .laptop_logo {
-  height:65px;
-  width:70px;
-  margin-top:10px;
+  height:7vh;
+  // width:70px;
+  margin-top:.5vh;
 }
 
 .tablet_logo {
-  height:60px;
-  width:50px;
-  margin-top:10px;
+  height:5vh;
+  // width:50px;
+  margin-top:1.5vh;
 }
 
 .inventory_inner_square {
