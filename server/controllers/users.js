@@ -20,7 +20,7 @@ export default function(app, db) {
   });
 
   // CRUD User - Update
-  app.put("/post/:id", (req, res) => {
+  app.put("/users/:id", (req, res) => {
     db.User.update(
       {
         username: req.body.username,
