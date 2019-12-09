@@ -20,28 +20,30 @@ class CheckoutForm extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <div>
+          <Navbar />
+        </div>
+
         <div className='checkout_form_container'>
           <div className='checkout_square'>
             <h1 className='checkout_title'>Checkout Form</h1>
-            <form className='checkout_form'>
+            <form className='checkout_form' state={this.state} onChange={state => this.setState(state)}>
 
               {/* Name Field */}
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
-
+                value={this.name}
+                onChange={this.handleChange}
                 placeholder='Name'
               />
-
-
 
               {/* Company ID Field */}
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
+                value={this.id}
+                onChange={this.handleChange}
                 placeholder='Company ID'
               />
 
@@ -49,43 +51,37 @@ class CheckoutForm extends Component {
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
+                value={this.email}
+                onChange={this.handleChange}
                 placeholder='Email Address'
               />
-
 
               {/* Phone Number Field  */}
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
-
+                value={this.phoneNumber}
+                onChange={this.handleChange}
                 placeholder='Phone Number'
               />
-
 
               {/* Duration of Checkout Field */}
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
-
-                placeholder='Duration of Checkout' />
-
-              {/* Date Field */} {/* TODO - make dropdown calendar */}
-
+                value={this.checkoutDuration}
+                onChange={this.handleChange}
+                placeholder='Duration of Checkout'
+              />
 
               {/* Date Field */}
               {' '}
               {/* TODO - make dropdown calendar */}
-
               <input
                 className='checkout_input_field'
                 type='type'
-                value=''
-
-                placeholder='Date'
-
+                value={this.date}
+                onChange={this.handleChange}
                 placeholder='Date'
               />
 
@@ -93,19 +89,18 @@ class CheckoutForm extends Component {
               <input
                 className='checkout_input_field'
                 type='text'
-                value=''
-
+                value={this.reasonForCheckout}
+                onChange={this.handleChange}
                 placeholder='Reason for Checkout'
               />
 
-              placeholder='Reason for Checkout' />
-
-
-            </form >
+            </form>
 
             <button className='checkout_form_button'>Checkout</button>
-          </div >
-        </div >
+          </div>
+        </div>
+
+
       </div >
     )
   }
