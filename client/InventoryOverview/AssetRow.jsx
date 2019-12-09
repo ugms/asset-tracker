@@ -1,19 +1,6 @@
 import React from 'react'
 import './AssetRow.scss'
 
-// function assets(props) {
-//   this.state = {
-//     chassie: [],
-//     current_user: [],
-//     previous_user: [],
-//     name2: [],
-//     manufacturer: [],
-//     model: [],
-//     os: [],
-//     serial_number: [],
-//     pruchase_date: [],
-//     notes: []
-//   }
 
 const AssetRow = ({ assets }) => {
 
