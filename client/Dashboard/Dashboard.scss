@@ -47,17 +47,18 @@
 .square_heading {
   font-family: 'Open Sans', sans-serif;
   // font-size: 1.5em;
-  font-size:2.5vh;
-  font-weight:400;
+  font-size:2.7vh;
+  font-weight:600;
   margin-top:3vh;
   text-transform: uppercase;
 }
 
 .square_heading2{
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.2em;
+  font-size: 2.5vh;
   margin-top:2.5vh;
-  font-weight:300;
+  font-weight:600;
+  color:white;
   text-transform: uppercase;
 }
 
@@ -80,7 +81,7 @@
 
 .reporting_image {
   height:20vh;
-  width:15vw;
+  width: 65%;
   margin:5px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -89,6 +90,7 @@ a.dashboard_link {
   text-decoration:none;
   color: white;
   font-size:1vw;
+  font-weight:500;
   text-transform: capitalize;
   text-align: center; 
 }
@@ -120,7 +122,7 @@ a.dashboard_link:visited {
  @include center_flex();
   background-color: white;
   border-radius: 3px;
-  font-size: 1.5vh;
+  font-size: 1.8vh;
   height:5vh;
   width: 15vw;
   margin:5px;
