@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD
-  background: #f9fbfd;
-=======
   background: white;
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
 }
 
 .blackbg {
@@ -91,11 +87,7 @@ img.logo {
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-#login .card .card-title h2:after {
-=======
 #register .card .card-title h2:after {
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   position: absolute;
   content: '';
   bottom: -10px;
@@ -129,12 +121,6 @@ img.logo {
   border-radius: 8px;
 }
 
-<<<<<<< HEAD
-.c-button {
-  width: 100%;
-  height: 45px;
-  padding: 10px 10px;
-=======
 .c-input:hover {
   background-color: #e8e8e8;
 }
@@ -142,7 +128,6 @@ img.logo {
 .c-button {
   width: 150px;
   height: 45px;
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   font-size: 15px;
   font-weight: 500;
   color: #fff;
@@ -156,15 +141,6 @@ img.logo {
 .c-button:hover {
   -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
           box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0);
-<<<<<<< HEAD
-}
-
-.loginbutton {
-  padding-bottom: 20px;
-  padding-left: 90px;
-  padding-right: 85px;
-  padding-bottom: 40px;
-=======
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
@@ -174,7 +150,6 @@ img.logo {
   padding-left: 90px;
   padding-right: 85px;
   padding-top: -15px;
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
 }
 
 a:link {
@@ -200,28 +175,16 @@ a:active {
   text-align: center;
 }
 
-<<<<<<< HEAD
-.signup_link_container {
-=======
 .registration_link_container {
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   -webkit-transform: translate(0px, -25px);
           transform: translate(0px, -25px);
 }
 
-<<<<<<< HEAD
-a.signup_link {
-  font-size: 13px;
-}
-
-.register_now_span {
-=======
 a.register_link {
   font-size: 13px;
 }
 
 .login_span {
->>>>>>> 80379dbc3b7e660d23047339943b545275ab24c1
   font-weight: bold;
 }
 /*# sourceMappingURL=Login.css.map */

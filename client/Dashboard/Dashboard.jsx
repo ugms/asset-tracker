@@ -79,11 +79,11 @@ class Dashboard extends Component {
               <h1 className='square_heading2'>Recent Items</h1>
             </div>
             <div>
-              <ItemRow id='97483' value='Laptop 5' />
-              <ItemRow id='28492' value='Tablet 6' />
-              <ItemRow id='18297' value='Laptop 2' />
-              <ItemRow id='21891' value='Laptop 7' />
-              <ItemRow id='87210' value='Tablet 1' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
             </div>
           </div>
 
@@ -92,11 +92,11 @@ class Dashboard extends Component {
             <div className='blue_square checked_out_square'>
               <h1 className='square_heading2'>Checked Out</h1></div>
             <div>
-              <ItemRow id='97483' value='Laptop 5' />
-              <ItemRow id='28492' value='Tablet 6' />
-              <ItemRow id='18297' value='Laptop 2' />
-              <ItemRow id='21891' value='Laptop 7' />
-              <ItemRow id='87210' value='Tablet 1' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
             </div>
           </div>
 
@@ -105,11 +105,11 @@ class Dashboard extends Component {
             <div className='blue_square low_inventory_square'>
               <h1 className='square_heading2'>Low Inventory</h1></div>
             <div>
-              <ItemRow id='97483' value='Laptop 5' />
-              <ItemRow id='28492' value='Tablet 6' />
-              <ItemRow id='18297' value='Laptop 2' />
-              <ItemRow id='21891' value='Laptop 7' />
-              <ItemRow id='87210' value='Tablet 1' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
+              <ItemRow id='' value='' />
             </div>
 
           </div>

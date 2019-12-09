@@ -77,7 +77,8 @@
 .square_heading2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
-  font-weight: 400;
+  margin-top: 2.5vh;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -179,10 +180,5 @@ a.dashboard_link:visited {
 .tablet_logo {
   height: 5vh;
   margin-top: 1.5vh;
-}
-
-.inventory_inner_square {
-  text-transform: uppercase;
-  font-size: 12px;
 }
 /*# sourceMappingURL=Dashboard.css.map */

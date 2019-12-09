@@ -14,15 +14,19 @@
 .navbar__heading {
   font-family: 'Open Sans', sans-serif;
   color: white;
-  font-size: 1.8em;
+  font-size: 3.5vh;
   font-weight: 400;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 25px;
   margin-left: 20px;
 }
 
 a.navbar__home_logo {
   margin-left: 15px;
-  margin-top: 20px;
+  margin-top: 2vh;
+}
+
+.home_logo {
+  height: 5.5vh;
 }
 /*# sourceMappingURL=NavBar.css.map */
