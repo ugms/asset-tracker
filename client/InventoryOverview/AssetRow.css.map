@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;CACd;;AAED,AAAA,UAAU,GAAG,GAAG,CAAC;EACf,MAAM,EAAE,SAAS;CAClB",
+    "sources": [
+        "AssetRow.scss"
+    ],
+    "names": [],
+    "file": "AssetRow.css"
+}

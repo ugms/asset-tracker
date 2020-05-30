@@ -1,0 +1,143 @@
+@mixin center_flex {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.gray_square {
+  height:40vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // justify-content: center;
+  align-items: center;
+  border-radius:5px;
+  background-color:#E5E5E5;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.squares {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 8vh;
+  margin-right:8vw;
+  margin-left:8vw;
+}
+
+.inner_squares{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inner_square {
+  height:8vh;
+  width:15vw;
+  margin:1vh;
+  background-color:rgb(178,219,250);
+  display: flexbox;
+  justify-content: center;
+  align-items:center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+}
+
+.square_heading {
+  font-family: 'Open Sans', sans-serif;
+  // font-size: 1.5em;
+  font-size:2.7vh;
+  font-weight:600;
+  margin-top:3vh;
+  text-transform: uppercase;
+}
+
+.square_heading2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5vh;
+  margin-top:2.5vh;
+  font-weight:600;
+  color:white;
+  text-transform: uppercase;
+}
+
+.blue_square {
+  display:flex;
+  justify-content: center;
+  height:7vh;
+  width: 25vw;
+  border-radius:5px;
+  background-color:#50AEF4;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.reporting_square {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.reporting_image {
+  height:20vh;
+  width: 65%;
+  margin:5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+a.dashboard_link {
+  text-decoration:none;
+  color: white;
+  font-size:1vw;
+  font-weight:500;
+  text-transform: capitalize;
+  text-align: center; 
+}
+
+a.dashboard_link:visited {
+  color:white;
+}
+
+.dashboard_button {
+  height:6vh;
+  width:8vw;
+  margin-bottom:2vh;
+  border-radius: 5px;
+  background-color: #50AEF4;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventory_inner_squares {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inventory_inner_square {
+ @include center_flex();
+  background-color: white;
+  border-radius: 3px;
+  font-size: 1.8vh;
+  height:5vh;
+  width: 15vw;
+  margin:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+}
+
+.laptop_logo {
+  height:7vh;
+  // width:70px;
+  margin-top:.5vh;
+}
+
+.tablet_logo {
+  height:5vh;
+  // width:50px;
+  margin-top:1.5vh;
+}
+

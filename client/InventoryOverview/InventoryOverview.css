@@ -1,0 +1,57 @@
+.category_container {
+  background-color: gray;
+  height: 100%;
+  width: 20vw;
+}
+
+.inventory_overview_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  background-color: #707070;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  height: 45px;
+  width: 85px;
+  margin: 15px;
+}
+
+.flat-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 80%;
+  overflow: visible;
+  width: auto;
+}
+
+.flat-table th {
+  background-color: #50aef4;
+  color: white;
+  font-weight: normal;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.flat-table td {
+  background-color: #eeeeee;
+  color: #6f6f6f;
+  padding: 10px 10px;
+}
+/*# sourceMappingURL=InventoryOverview.css.map */
